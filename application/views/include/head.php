@@ -11,7 +11,7 @@
         <?php
         $url = $_SERVER['REQUEST_URI'];
         $pattern = '/login';
-        if (strlen(strstr($url, $pattern)) > 0 || strlen(strstr($url, "/register")) > 0 || strlen(strstr($url, "/forgot_password")) > 0) {
+        if (strlen(strstr($url, $pattern)) > 0 || strlen(strstr($url, "/forgot_password")) > 0) {
             ?>
             <link rel="stylesheet" href="<?= CSS_URL ?>login/login.css" media="all" type="text/css">
         <?php } else if (is_admin() || is_developer()) {
@@ -20,7 +20,8 @@
             <script type="text/javascript" src="<?= JS_URL; ?>sidebar.js"></script>
         <?php } else {
             ?>
-            <link rel="stylesheet" href="<?= CSS_URL; ?>customize.css" media="all" type="text/css">  
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
         <?php }
         ?>
             
