@@ -20,7 +20,7 @@
             </div>
             <strong class="logo"><a href="<?= base_url(); ?>"></a></strong>
             <div class="links">
-                    <a class="add-game" href="<?= base_url(); ?>">add new Car</a>
+                    <a class="add-game" href="<?= base_url(); ?>admin/add_new_car">add new Car</a>
             </div>
         </div>
     </header>

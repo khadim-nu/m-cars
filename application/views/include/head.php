@@ -7,7 +7,7 @@
         <title><?= $title; ?></title>
         <script type="text/javascript" src="<?= JS_URL; ?>jquery-latest.min.js"></script>
         <link rel="stylesheet" href="<?= CSS_URL; ?>bootstrap.min.css" media="all" type="text/css">
-        <link rel="stylesheet" href="<?= CSS_URL; ?>all.css" media="all" type="text/css">
+        <!--<link rel="stylesheet" href="<?= CSS_URL; ?>all.css" media="all" type="text/css">-->
         <?php
         $url = $_SERVER['REQUEST_URI'];
         $pattern = '/login';
@@ -20,7 +20,6 @@
             <script type="text/javascript" src="<?= JS_URL; ?>sidebar.js"></script>
         <?php } else {
             ?>
-            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
         <?php }
         ?>

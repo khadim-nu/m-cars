@@ -24,7 +24,6 @@ function initCustomForms() {
         wrapNative: false,
         wrapNativeOnMobile: false
     });
-    jcf.replaceAll();
 }
 
 // scroll gallery init

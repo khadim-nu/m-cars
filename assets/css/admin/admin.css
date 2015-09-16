@@ -178,6 +178,9 @@ body.admin-page{
     position: relative;
     overflow: hidden;
 }
+.inner-content{
+    padding: 0px 9%;
+}
 #header .right-pane .image .number{
     position: absolute;
     width: 20px;
@@ -254,7 +257,7 @@ body.admin-page{
     width: 84px;
     position: fixed;
     z-index: 9999;
-    background: #362e7e;
+    background: #0095b7;
     height: 100%;
     overflow: auto;
     -webkit-transition: all 1s ease;
@@ -328,7 +331,7 @@ body.admin-page{
 /*Content*/
 #content{
     overflow: hidden;
-    padding: 0 0 0 84px;
+    padding: 7px 0 0 84px;
 }
 #content .all-detail{
     margin: 30px auto 0;
@@ -442,16 +445,17 @@ body.admin-page{
 }
 .page-heading{
     text-transform: capitalize;
+    padding-left: 9%;
 }
 .errormsg,
 .successmsg{
     position: absolute;
-    top:17px;
+    top:11px;
     left:35%;
     width:30%;
     font-size: 15px;
     line-height: 15px;
-    padding: 7px 50px;
+    padding: 13px 50px;
     height: 100%;
     background-color: rgba(244, 179, 179, 0.8);
     color: rgba(244, 179, 179, 0.8);
@@ -709,6 +713,7 @@ body.admin-page{
 #content .table-wrapper .holder{
     overflow: hidden;
     margin: 0 0 55px;
+    padding: 0 9%;
 }
 #content .table-wrapper .holder .block{
     float: left;
@@ -903,7 +908,13 @@ table.dataTable.no-footer{border:1px solid #514d95 !important;}
     -webkit-box-sizing:border-box;
     -moz-box-sizing:border-box;
 }
-.site-info-wrap .box.even{border-left: 4px solid #3e9dbc;}
+.site-info-wrap .box{
+   margin-left: 10%; 
+}
+.site-info-wrap .box.even{
+    border-left: 4px solid #3e9dbc;
+    margin-left: 10%;
+}
 .site-info-wrap .box .title{
     display: block;
     margin: 0 0 0;
@@ -1108,7 +1119,7 @@ table.dataTable.no-footer{border:1px solid #514d95 !important;}
 /*Form Styling*/
 #form-wrap{
     overflow: hidden;
-    padding: 30px 14% 0 30px
+    padding: 30px 14% 0 11%;
 }
 #form-wrap .row{
     margin: 0 0 30px;
@@ -1123,14 +1134,27 @@ table.dataTable.no-footer{border:1px solid #514d95 !important;}
 #form-wrap .row .input-wrap{
     float: right;
     background: #fff;
-    border: 1px solid #dbd7e3;
-    padding: 4px 11px;
+    border: 1px solid burlywood;
+    padding: 6px 0px;
     font-size: 18px !important;
     color: #8f86a3;
     line-height: 28px;
     width: 44%;
     position: relative;
+    height: 45px;
 
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 0px solid #ccc; 
 }
 .input-wrap .parsley-errors-list.filled,
 .input-wrap .parsley-errors-list,
@@ -1156,7 +1180,7 @@ table.dataTable.no-footer{border:1px solid #514d95 !important;}
 #form-wrap .row .input-wrap.file{
     padding: 0;
     cursor: pointer !important;
-   // overflow: hidden !important;
+    // overflow: hidden !important;
 }
 #form-wrap .row .input-wrap input[type="file"]{cursor: pointer;}
 #form-wrap .row .input-wrap input[type="text"],
@@ -1175,8 +1199,8 @@ table.dataTable.no-footer{border:1px solid #514d95 !important;}
     z-index: 99999 !important;
 }
 #form-wrap .row  input[type="submit"],
-#content .all-detail .btn-row .btn{
-    background:#32487f;
+#content .all-detail .btn-row .btn, .add-new-link{
+    background:#0095b7;
     border: none;
     color: #fff;
     cursor: pointer;
@@ -1193,6 +1217,11 @@ table.dataTable.no-footer{border:1px solid #514d95 !important;}
     -ms-transition: all .2s ease;
     -o-transition: all .2s ease;
     transition: all .2s ease;
+   // margin-left: 89% !important;
+}
+.add-new-link{
+   float: right;
+   margin-right: 16%
 }
 #form-wrap .row textarea{
     border: 1px solid #dbd7e3;

@@ -39,5 +39,17 @@ $config = array(
             'label' => 'Email',
             'rules' => 'trim|required|valid_email'
         )
+    ),
+    'add-car' => array(
+        array(
+            'field' => 'make',
+            'label' => 'Make',
+            'rules' => 'trim|required'
+        ),
+        array(
+            'field' => 'model',
+            'label' => 'Model',
+            'rules' => 'trim|required'
+        )
     )
 );

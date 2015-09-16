@@ -30,7 +30,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <input type="submit" value="Register">
+                        <input class="" type="submit" value="Register">
                     </div>
                 </fieldset>
             </form>

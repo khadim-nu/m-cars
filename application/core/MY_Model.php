@@ -87,11 +87,6 @@ class MY_Model extends CI_Model {
     public function get_record_by_id($id) {
 
         $this->db->where($this->primary_key, $id);
-        if (is_player()) {
-            $this->db->where('status', 1);
-        } else if (is_developer()) {
-            $this->db->where('developerID', $this->session->userdata('user_data')->id);
-        }
         return $this->db->get($this->table_name)->result_array();
     }
 
@@ -447,6 +442,14 @@ class MY_Model extends CI_Model {
 
     public function is_already_registered($email) {
         $this->db->where('email', $email);
+        $query = $this->db->get($this->table_name);
+        if ($query->num_rows() > 0) {
+            return true;
+        }
+        return false;
+    }
+     public function is_already_exist($where) {
+        $this->db->where($where);
         $query = $this->db->get($this->table_name);
         if ($query->num_rows() > 0) {
             return true;

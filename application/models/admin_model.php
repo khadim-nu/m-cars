@@ -18,7 +18,7 @@ class Admin_model extends Common_model {
                 'status' => $status,
                 'role_id' => $role,
                 'created_by'=>1,
-                'created_at'=>$today_datetime
+                'created_at'=>$this->today_datetime
             );
             $result = $this->db->insert($this->table_name, $insert_data);
             if ($result) {
@@ -53,7 +53,7 @@ class Admin_model extends Common_model {
             'token' => $token,
             'status' => 0,
             'role_id' => ADMIN,
-            'created_at'=>$today_datetime,
+            'created_at'=>$this->today_datetime,
             'created_by'=>$this->session->userdata('user_data')->id
         );
         $result = $this->db->insert($this->table_name, $insert_data);
@@ -82,7 +82,7 @@ class Admin_model extends Common_model {
         $dt = $dt->format('Y-m-d H:i:s');
         $insert_data = array(
             'status' => 1,
-            'updated_at'=>$today_datetime
+            'updated_at'=>$this->today_datetime
         );
         $this->db->where('token', $token);
         $user = $this->Admin_model->get_single("token", $token);
