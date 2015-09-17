@@ -13,13 +13,43 @@ class Cars_model extends Common_model {
             $this->session->set_flashdata('message', ERROR_MESSAGE . ":" . validation_errors());
             return FALSE;
         }
+        $features_list="";
+        $features_count=$this->input->post('feature_count');
+        if($features_count>0){
+            for($f=1;$f<=$features_count;$f++){
+                if(!empty($features_list))
+                    $features_list .=",";
+                $features_list .=$this->input->post('feature_'.$f);
+            }
+        }
+        $features=array(
+            "list"=>$features_list,
+           "desc" => trim($this->input->post('desc'))
+        );
+        $this->load->model('Features_model');
+        $feature_id = $this->Features_model->save($features);
+        $attributes = array(
+            "year" => $this->input->post('year'),
+            "mileage" => $this->input->post('mileage'),
+            "style" => $this->input->post('style'),
+            "estate" => $this->input->post('estate'),
+            "transmission" => $this->input->post('transmission'),
+            "speed" => $this->input->post('speed'),
+            "engine_size" => $this->input->post('engine_size'),
+            "fuel" => $this->input->post('fuel'),
+            "no_of_owners" => $this->input->post('no_of_owners'),
+            "color" => $this->input->post('color'),
+            "doors" => $this->input->post('doors')
+        );
+        $this->load->model('Attributes_model');
+        $attribute_id = $this->Attributes_model->save($attributes);
         $insert_data = array(
             'make_id' => $this->input->post('make'),
             'model_id' => $this->input->post('model'),
             'price' => $this->input->post('price'),
             'status' => 1,
-            'attribute_id' => 1,
-            'attribute_id' => 1,
+            'feature_id' => $feature_id,
+            'attribute_id' => $attribute_id,
             'created_at' => $this->today_datetime
         );
         ///////////////////  saving image ///

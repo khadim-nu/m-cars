@@ -7,7 +7,7 @@
             <?php $this->load->view('message'); ?>
         </div>
         <div id="form-wrap">
-            <form id="admin-create-comeptiton" method="post" action="<?= base_url(); ?>admin/add_new_car" enctype="multipart/form-data">
+            <form id="register" method="post" action="<?= base_url(); ?>admin/add_new_car" enctype="multipart/form-data">
                 <fieldset>
                     <?php $form_data = $this->session->flashdata('form_data');
                     ?>
@@ -51,9 +51,81 @@
                         </div>
                         <div class="input-wrap">
                             <span id="err"></span>
-                            <input class="number-num" type="number" name="price" id="entryfee"
-                                   placeholder="Price"  data-trigger="change"  data-type="integer" min="<?= FEE_MIN + 1 ?>" max="<?= FEE_MAX + 1 ?>">
+                            <input class="number-num" type="number" name="price"
+                                   placeholder="Price"  data-trigger="change"  data-type="integer" min="<?= NUM_MIN; ?>" max="<?= NUM_MAX ?>">
                         </div>
+                    </div>
+                     <div class="row">
+                        <h3>Attributes</h3>
+                     </div>
+                    <div class="row">
+                       <div class="input-wrap">
+                            <span id="err"></span>
+                            <input class="number-num" type="number" name="year"
+                                   placeholder="Year"  data-trigger="change" data-parsley-required  data-type="integer" min="<?= NUM_MIN; ?>" max="<?= NUM_MAX ?>">
+                        </div>
+                        <div class="input-wrap">
+                            <span id="err"></span>
+                            <input class="number-num" type="number" name="mileage"
+                                   placeholder="Mileage"  data-trigger="change"   data-type="integer" min="<?= NUM_MIN ?>" max="<?= NUM_MAX; ?>">
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <div class="input-wrap">
+                            <input type="text" name="style" 
+                                   placeholder="Style" data-trigger="change" data-parsley-minlength="<?= TITLE_LIMIT_MIN ?>" data-parsley-maxlength="<?= TITLE_LIMIT_MAX ?>">
+                        </div>
+                        <div class="input-wrap">
+                            <input type="text" name="estate" 
+                                   placeholder="Estate" data-trigger="change" data-parsley-minlength="<?= TITLE_LIMIT_MIN ?>" data-parsley-maxlength="<?= TITLE_LIMIT_MAX ?>">
+                        </div>
+                    </div>
+                    <div class="row">
+                       <div class="input-wrap">
+                            <span id="err"></span>
+                            <input class="number-num" type="number" name="transmission"
+                                   placeholder="Transmission"  data-trigger="change"  data-type="integer" min="<?= NUM_MIN; ?>" max="<?= NUM_MAX ?>">
+                        </div>
+                        <div class="input-wrap">
+                            <input type="text" name="speed" 
+                                   placeholder="Speed" data-trigger="change" data-parsley-minlength="<?= TITLE_LIMIT_MIN ?>" data-parsley-maxlength="<?= TITLE_LIMIT_MAX ?>">
+                        </div>
+                    </div>
+                    <div class="row">
+                       <div class="input-wrap">
+                            <span id="err"></span>
+                            <input class="number-num" type="number" name="engine_size"
+                                   placeholder="Engine Size"  data-trigger="change"  data-type="integer" min="<?= NUM_MIN; ?>" max="<?= NUM_MAX ?>">
+                        </div>
+                        <div class="input-wrap">
+                            <input type="text" name="fuel" 
+                                   placeholder="Fuel" data-trigger="change" data-parsley-required data-parsley-minlength="<?= TITLE_LIMIT_MIN ?>" data-parsley-maxlength="<?= TITLE_LIMIT_MAX ?>">
+                        </div>
+                    </div>
+                     <div class="row">
+                        <div class="input-wrap">
+                            <input type="text" name="color" 
+                                   placeholder="Color" data-trigger="change" data-parsley-required data-parsley-minlength="<?= TITLE_LIMIT_MIN ?>" data-parsley-maxlength="<?= TITLE_LIMIT_MAX ?>">
+                        </div>
+                         <div class="input-wrap">
+                            <span id="err"></span>
+                            <input class="number-num" type="number" name="doors"
+                                   placeholder="Number Of Doors"  data-trigger="change" data-parsley-required data-type="integer" min="<?= NUM_MIN; ?>" max="<?= NUM_MAX ?>">
+                        </div>
+                    </div>
+                    <div class="row">
+                         <div class="input-wrap">
+                            <span id="err"></span>
+                            <input class="number-num" type="number" name="no_of_owners"
+                                   placeholder="Number Of Owners"  data-trigger="change"  data-parsley-required data-type="integer" min="<?= NUM_MIN; ?>" max="<?= NUM_MAX ?>">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h3>Features <span id="add_feature" class="btn btn-group-vertical btn-info">+</span></h3>
+                        <input type="hidden" id="feature_count" name="feature_count" value="0" />
+                    </div>
+                    <div id="features_list">
+                        
                     </div>
                     <div class="row">
                         (max. <?= DESC_LIMIT_MAX; ?> characters)

@@ -14,6 +14,12 @@ class Admin extends MY_Controller {
         if (is_admin()) {
             $data['user_role'] = 'admin';
             $data['title'] = 'Dashboard';
+            $data['admins_count'] = $this->Admin_model->record_count(array("status" => 1));
+            $this->load->model('Cars_model');
+            $data['cars_count'] = $this->Cars_model->record_count(array("status" => 1));
+            $this->load->model('Requests_model');
+            $data['sell_count'] = $this->Requests_model->record_count(array("status" => 1, 'type' => SELL_REQUESTS));
+            $data['source_count'] = $this->Requests_model->record_count(array("status" => 1, 'type' => SOURCE_REQUESTS));
             $this->load->view('admin/dashboard', $data);
         } else {
             redirect('admin/login');
@@ -255,9 +261,31 @@ class Admin extends MY_Controller {
     public function cars_list() {
         if (is_admin()) {
             $this->load->model('Cars_model');
-            $data['data'] = $this->Cars_model->get_all_cars();
+            $data['data'] = $this->Cars_model->get_all_cars(); //get_all_custom_where(array("status"=>1)," (select title from makes where makes.id = cars.make_id) as make_title  , (select title from models where models.id = cars.model_id) as model_title , cars.*");
             $data['title'] = 'Cars List';
             $this->load->view('admin/cars_list', $data);
+        } else {
+            redirect('welcome');
+        }
+    }
+
+    public function car_details($id) {
+        if (is_admin()) {
+            $this->load->model('Cars_model');
+            $car = $this->Cars_model->get_single("id", $id);
+            if (!empty($car)) {
+                $this->load->model('Features_model');
+                $feature = $this->Features_model->get_single("id", $car->feature_id);
+                $this->load->model('Attributes_model');
+                $attribute = $this->Attributes_model->get_single("id", $car->attribute_id);
+                $data['car'] = $car;
+                if (!empty($feature))
+                    $data['feature'] = $feature;
+                if (!empty($attribute))
+                    $data['attribute'] = $attribute;
+                $data['title'] = 'Car Details';
+                $this->load->view('admin/car_details', $data);
+            }
         } else {
             redirect('welcome');
         }
@@ -284,21 +312,22 @@ class Admin extends MY_Controller {
             redirect('welcome');
         }
     }
-    
+
     public function sell_requests() {
         if (is_admin()) {
             $this->load->model('Requests_model');
-            $data['data'] = $this->Requests_model->get_all_requests($type=SELL_REQUESTS);
+            $data['data'] = $this->Requests_model->get_all_requests($type = SELL_REQUESTS);
             $data['title'] = 'Sell Requests';
             $this->load->view('admin/sell_requests', $data);
         } else {
             redirect('welcome');
         }
     }
-     public function source_requests() {
+
+    public function source_requests() {
         if (is_admin()) {
             $this->load->model('Requests_model');
-            $data['data'] = $this->Requests_model->get_all_requests($type=SOURCE_REQUESTS);
+            $data['data'] = $this->Requests_model->get_all_requests($type = SOURCE_REQUESTS);
             $data['title'] = 'Source Requests';
             $this->load->view('admin/source_requests', $data);
         } else {

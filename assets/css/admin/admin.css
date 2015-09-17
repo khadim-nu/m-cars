@@ -1198,7 +1198,7 @@ table.dataTable.no-footer{border:1px solid #514d95 !important;}
     outline: none !important;
     z-index: 99999 !important;
 }
-#form-wrap .row  input[type="submit"],
+#form-wrap .row  input[type="submit"],input[type="button"],
 #content .all-detail .btn-row .btn, .add-new-link{
     background:#0095b7;
     border: none;

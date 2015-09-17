@@ -9,19 +9,19 @@
         <div class="inner-content">
             <div class="site-info-wrap">
                 <div class="box">
-                    <strong class="title"><?= 123; ?></strong>
-                    <span class="data">Bought Cars</span>
+                    <strong class="title"><?= $cars_count; ?></strong>
+                    <span class="data">Available Cars</span>
                 </div>
                 <div class="box even">
-                    <strong class="title"><?= 123; ?></strong>
-                    <span class="data">Sold Cars</span>
+                    <strong class="title"><?= $sell_count; ?></strong>
+                    <span class="data">Sell Requests</span>
                 </div>
                 <div class="box">
-                    <strong class="title"><?= 123; ?></strong>
-                    <span class="data">Source Cars</span>
+                    <strong class="title"><?= $source_count; ?></strong>
+                    <span class="data">Source Requests</span>
                 </div>
                 <div class="box even">
-                    <strong class="title"><?= 123; ?></strong>
+                    <strong class="title"><?= $admins_count; ?></strong>
                     <span class="data"> Registered Admins</span>
                 </div>
             

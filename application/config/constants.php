@@ -59,8 +59,8 @@ define('DESC_LIMIT_MIN', 10);
 define('DESC_LIMIT_MAX', 200);
 define('PASSWORD_MIN_LEN', 6);
 define('PASSWORD_MAX_LEN', 20);
-define('FEE_MIN', 0);
-define('FEE_MAX', 1000000001);
+define('NUM_MIN', 0);
+define('NUM_MAX', 1000000001);
 
 define('UPLOAD_PATH', 'assets/uploads/');
 define('DEFAULT_SRC', 'assets/images/avatar.jpg');

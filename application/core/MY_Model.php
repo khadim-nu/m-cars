@@ -4,7 +4,7 @@ class MY_Model extends CI_Model {
 
     public $table_name = '';
     public $primary_key = 'id';
-     public $today_datetime = "";
+    public $today_datetime = "";
     public $current_time_stamp = "";
 
     public function __construct() {
@@ -18,7 +18,7 @@ class MY_Model extends CI_Model {
             $this->today_datetime = $dt->format('Y-m-d H:i:s');
         }
         $this->current_time_stamp = $dt->format('YmdHis');
-        
+
         $this->load->helper(array('form', 'url', 'date', 'array', 'text'));
         $this->load->library('upload');
     }
@@ -178,15 +178,11 @@ class MY_Model extends CI_Model {
         return $str;
     }
 
-    public function record_count($where_column_name = NULL, $where_column_value = NULL) {
-        if ($where_column_name == NULL) {
+    public function record_count($where = array()) {
+        if (empty($where)) {
             return $this->db->count_all($this->table_name);
         } else {
-            if (is_integer($where_column_value)) {
-                $this->db->where($where_column_name, $where_column_value);
-            } else {
-                $this->db->like($where_column_name, $where_column_value);
-            }
+            $this->db->where($where);
             $this->db->from($this->table_name);
             return $this->db->count_all_results();
         }
@@ -448,7 +444,8 @@ class MY_Model extends CI_Model {
         }
         return false;
     }
-     public function is_already_exist($where) {
+
+    public function is_already_exist($where) {
         $this->db->where($where);
         $query = $this->db->get($this->table_name);
         if ($query->num_rows() > 0) {
