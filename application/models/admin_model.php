@@ -158,7 +158,7 @@ class Admin_model extends Common_model {
                 $updated_user->name = $this->input->post('name');
                 $updated_user->updated_at = $dt;
                 if ($profileImageData) {
-                    $updated_user->imageUrl = base_url() . UPLOAD_PATH . $profileImageData['upload_data']['orig_name'];
+                    $updated_user->image_url =$insert_data['image_url'];
                 }
                 $this->session->set_userdata('user_data', $updated_user);
                 // sending pararmeter for sending email

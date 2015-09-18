@@ -4,7 +4,8 @@
     <div id="content">
         <div class="page-head">
             <span class="page-heading">Account detail</span>
-            <?php $this->load->view('message'); ?>
+            <?php
+            $this->load->view('message'); ?>
         </div>
         <div class="all-detail">
             <div class="holder-wrap">

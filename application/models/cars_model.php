@@ -13,18 +13,18 @@ class Cars_model extends Common_model {
             $this->session->set_flashdata('message', ERROR_MESSAGE . ":" . validation_errors());
             return FALSE;
         }
-        $features_list="";
-        $features_count=$this->input->post('feature_count');
-        if($features_count>0){
-            for($f=1;$f<=$features_count;$f++){
-                if(!empty($features_list))
+        $features_list = "";
+        $features_count = $this->input->post('feature_count');
+        if ($features_count > 0) {
+            for ($f = 1; $f <= $features_count; $f++) {
+                if (!empty($features_list))
                     $features_list .=",";
-                $features_list .=$this->input->post('feature_'.$f);
+                $features_list .=$this->input->post('feature_' . $f);
             }
         }
-        $features=array(
-            "list"=>$features_list,
-           "desc" => trim($this->input->post('desc'))
+        $features = array(
+            "list" => $features_list,
+            "desc" => trim($this->input->post('desc'))
         );
         $this->load->model('Features_model');
         $feature_id = $this->Features_model->save($features);
@@ -60,6 +60,12 @@ class Cars_model extends Common_model {
         /////////////////////////////////////////////
         $result = $this->Cars_model->save($insert_data);
         if ($result) {
+            $images_names = $this->Admin_model->upload_multiple_images('files');
+            $images_data = array();
+            foreach ($images_names as $key => $value) {
+                array_push($images_data, array("car_id" => $result, "image_url" => $value));
+            }
+            $this->db->insert_batch("images", $images_data);
             $this->session->set_flashdata('message', "Saved successfully.");
             return true;
         }
@@ -67,14 +73,6 @@ class Cars_model extends Common_model {
         return false;
     }
 
-    public function get_all_cars() {
-        $where = "c.status = 1";
-        $join_array = array(
-            array('table' => 'makes m', 'condition' => 'm.id = c.make_id', 'direction' => 'left'),
-            array('table' => 'models model', 'condition' => 'model.id = c.model_id', 'direction' => 'left')
-        );
-        $cars = $this->fetch_join_multiple_limit(NULL, NULL, ' m.title as make_title, model.title as model_title , c.* ', 'cars c', $join_array, $where, FALSE, 'c.created_at DESC');
-        return $cars;
-    }
+    
 
 }

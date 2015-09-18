@@ -105,7 +105,7 @@ class MY_Model extends CI_Model {
             $this->db->set($data)->where($column, $id)->update($this->table_name);
             $id = $this->db->affected_rows();
         } else {
-            // This is an insert
+// This is an insert
             $this->db->set($data)->insert($this->table_name);
             $id = $this->db->insert_id();
         }
@@ -161,7 +161,7 @@ class MY_Model extends CI_Model {
         $this->db->group_by('MONTH(created_at)');
         $this->db->order_by('month', 'ASC');
         $query = $this->db->get($this->table_name);
-        //$this->output->enable_PROFILER(TRUE);
+//$this->output->enable_PROFILER(TRUE);
         if ($query->num_rows() > 0) {
             $query = $query->result_array();
             return $query;
@@ -410,7 +410,7 @@ class MY_Model extends CI_Model {
     }
 
     public function upload_image($fileName) {
-        ////////////////// uplading image/////////////////////////
+////////////////// uplading image/////////////////////////
         $this->load->library('upload');
         $dt = new DateTime();
         $dt = $dt->format('YmdHis');
@@ -418,7 +418,7 @@ class MY_Model extends CI_Model {
         $config['upload_path'] = UPLOAD_PATH;
         $config['allowed_types'] = UPLOAD_IMAGE_TYPES;
         $config['max_size'] = UPLOAD_IMAGE_SIZE;
-        // print_r($_FILES);die;
+// print_r($_FILES);die;
         if (!isset($_FILES[$fileName])) {
             $this->session->set_flashdata('message', ERROR_MESSAGE . ": file size is greater than " . UPLOAD_IMAGE_SIZE / 1024 . ' MB');
             return false;
@@ -433,7 +433,54 @@ class MY_Model extends CI_Model {
             return false;
         }
         return $profileImageData;
-        /////////////////////////////////////
+/////////////////////////////////////
+    }
+
+//    public function upload_multiple_images($files) {
+//        $this->load->library('upload');
+//
+//        $files = $_FILES;
+//        $cpt = count($_FILES[$files]['name']);
+//        for ($i = 0; $i < $cpt; $i++) {
+//            $_FILES[$files]['name'] = $files[$files]['name'][$i];
+//            $_FILES[$files]['type'] = $files[$files]['type'][$i];
+//            $_FILES[$files]['tmp_name'] = $files[$files]['tmp_name'][$i];
+//            $_FILES[$files]['error'] = $files[$files]['error'][$i];
+//            $_FILES[$files]['size'] = $files[$files]['size'][$i];
+//
+//            $this->upload->initialize($this->set_upload_options());
+//            $this->upload->do_upload();
+//        }
+//    }
+
+
+    public function upload_multiple_images($name = NULL) {
+        $file_names=array();
+        if (isset($_FILES [$name])) {
+            foreach ($_FILES[$name]['name'] as $key => $value) {
+
+                if (is_uploaded_file($_FILES[$name]['tmp_name'][$key]) && $_FILES[$name]['error'][$key] == 0) {
+
+                    $filename = $_FILES[$name]['name'][$key];
+                    $filenamex = end(explode(".", $filename));
+                    $encripted_name = str_replace('.' . $filenamex, "", $filename) . $this->current_time_stamp . '.' . $filenamex;
+
+                    if (move_uploaded_file($_FILES[$name]['tmp_name'][$key], UPLOAD_PATH . $encripted_name)) {
+                        array_push($file_names, UPLOAD_PATH.$encripted_name);
+                    }
+                }
+            }
+        }
+        return $file_names;
+    }
+
+    private function set_upload_options() {
+        //upload an image options
+        $config = array();
+        $config['upload_path'] = UPLOAD_PATH;
+        $config['allowed_types'] = 'gif|jpg|png';
+
+        return $config;
     }
 
     public function is_already_registered($email) {
@@ -466,6 +513,18 @@ class MY_Model extends CI_Model {
             return $year . '-' . $month . '-' . $day;
         }
         return FALSE;
+    }
+    public function get_all_join($where2=FALSE) {
+        $where = "c.status = 1";
+        if($where2){
+             $where .=" AND ".$where2;
+        }
+        $join_array = array(
+            array('table' => 'makes m', 'condition' => 'm.id = c.make_id', 'direction' => 'left'),
+            array('table' => 'models model', 'condition' => 'model.id = c.model_id', 'direction' => 'left')
+        );
+        $cars = $this->fetch_join_multiple_limit(NULL, NULL, ' m.title as make_title, model.title as model_title , c.* ', $this->table_name.' c', $join_array, $where, FALSE, 'c.created_at DESC');
+        return $cars;
     }
 
 }

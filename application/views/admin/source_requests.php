@@ -36,7 +36,9 @@
                                             <td class="sorting"><?= $row['email']; ?></td>
                                             <td class="sorting"><?= $row['phone']; ?></td>
                                             <td class="hidden-phone"><?= ($row['created_at']); ?></td>
-                                           <td class="hidden-phone"><a href="<?= base_url(); ?>admin/delete_model/<?= $row['id']; ?>">Delete</a> | <a href="<?= base_url(); ?>cars/car_datail/<?= $row['id']; ?>">Details</a></td>
+                                            <td>
+                                                <a href="<?= base_url(); ?>admin/source_request_details/<?= $row['id']; ?>">Details</a>
+                                            </td>
 
                                         </tr>
                                         <?php

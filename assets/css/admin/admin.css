@@ -304,9 +304,9 @@ body.admin-page{
 #sidebar .fixed ul .create-comeptiton a{background: url(../../images/admin/Create-Tournament.svg) no-repeat;}
 #sidebar .fixed ul .log-out a{background: url(../../images/admin/log-out.svg) no-repeat;}
 #sidebar .fixed ul .send-message a{background: url(../../images/admin/Send-Message.svg) no-repeat;}
+
 #sidebar .fixed ul .view-admin a{background: url(../../images/admin/View-Admin.svg) no-repeat;}
-#sidebar .fixed ul .view-all-tournmanets a{background: url(../../images/admin/View-All-Tournmanets.svg) no-repeat;}
-#sidebar .fixed ul .view-developres a{background: url(../../images/admin/View-Developres.svg) no-repeat;}
+#sidebar .fixed ul .view a{background: url(../../images/admin/car-art.svg) no-repeat;}
 #sidebar .fixed ul .settings a{
     background: url(../../images/admin/ico6.png) no-repeat;
     width: 33px;
@@ -450,7 +450,7 @@ body.admin-page{
 .errormsg,
 .successmsg{
     position: absolute;
-    top:11px;
+    top:10px;
     left:35%;
     width:30%;
     font-size: 15px;
@@ -713,7 +713,7 @@ body.admin-page{
 #content .table-wrapper .holder{
     overflow: hidden;
     margin: 0 0 55px;
-    padding: 0 9%;
+    padding: 0 10%;
 }
 #content .table-wrapper .holder .block{
     float: left;
@@ -909,7 +909,7 @@ table.dataTable.no-footer{border:1px solid #514d95 !important;}
     -moz-box-sizing:border-box;
 }
 .site-info-wrap .box{
-   margin-left: 10%; 
+    margin-left: 10%; 
 }
 .site-info-wrap .box.even{
     border-left: 4px solid #3e9dbc;
@@ -1119,7 +1119,7 @@ table.dataTable.no-footer{border:1px solid #514d95 !important;}
 /*Form Styling*/
 #form-wrap{
     overflow: hidden;
-    padding: 30px 14% 0 11%;
+    padding: 30px 14% 0 12%;
 }
 #form-wrap .row{
     margin: 0 0 30px;
@@ -1199,7 +1199,7 @@ table.dataTable.no-footer{border:1px solid #514d95 !important;}
     z-index: 99999 !important;
 }
 #form-wrap .row  input[type="submit"],input[type="button"],
-#content .all-detail .btn-row .btn, .add-new-link{
+#content .all-detail .btn-row .btn, .add-new-link,.delete-link{
     background:#0095b7;
     border: none;
     color: #fff;
@@ -1217,11 +1217,19 @@ table.dataTable.no-footer{border:1px solid #514d95 !important;}
     -ms-transition: all .2s ease;
     -o-transition: all .2s ease;
     transition: all .2s ease;
-   // margin-left: 89% !important;
+    // margin-left: 89% !important;
 }
 .add-new-link{
-   float: right;
-   margin-right: 16%
+    float: right;
+    margin-right: 18%
+}
+.delete-link{
+    font-size: 14px;
+    line-height: 10px;
+    outline: medium none;
+    padding: 5px 10px;
+    text-align: center;
+    text-transform: none;
 }
 #form-wrap .row textarea{
     border: 1px solid #dbd7e3;
@@ -1273,3 +1281,44 @@ table.dataTable.no-footer{border:1px solid #514d95 !important;}
 @media (min-width: 1200px) {}
 
 .hide{ display: none;}
+#selectedFiles img {
+    width: 200px;
+    height: 150px;
+    float: left;
+    margin-bottom:9%;
+}
+.item_details{
+    padding-left: 2% !important;
+    border-left: 4px solid   #89949b;
+}
+.item_details .col-md-6,.col-xs-5,.col-xs-7{
+    padding-left: 1px !important;
+}
+.item_image .col-md-12{
+    padding-left: 0px !important;
+}
+.item_details .row , .item_image .row .row{
+      margin: 0 0 15px !important;   
+}
+.item_image{
+    height: auto;
+    width:33%;
+     
+}
+.item_detail_title, .item_detail_value,.detail_sub_heading{
+   // padding:0  5%;  
+   // margin: 0 10px;
+}
+.item_detail_title{
+    font-weight: bold;
+}
+.item_detail_value{
+}
+.detail_sub_heading{
+    font-weight: bold;
+    font-size: 20px;
+}
+.gallary_img{
+    width: 290px;
+    height: 200px;
+}

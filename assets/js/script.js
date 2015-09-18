@@ -162,21 +162,6 @@ $(document).ready(function () {
             maxDate: dateMax
         };
     }
-//////////////////////////////////////////////////////////
-
-    // Form Submit button disabler
-    $('#withdraw').submit(function () {
-        $(this).parent('form').submit();
-        $(this).hide();
-        $(this).after('<span class="disabled-text">Please Wait<span>');
-        $(this).parent('form :input').prop('disabled', true);
-    });
-
-    $('.show_child_div').hide();
-    $('.show_child').click(function () {
-        $(this).next('.show_child_div').toggle();
-    });
-
 /////////// fading error message/////////////////////////////////////////////
     setTimeout(function () {
         $('.errormsg,.successmsg').fadeOut('slow');
@@ -202,12 +187,12 @@ $(document).ready(function () {
         var feature2 = feature_count + 1;
         var html = '<div class="row" >';
         html += '<div class="input-wrap">';
-        html += '<input type="text" name="feature_'+feature_count+'"';
-        html += 'placeholder="Feature '+feature_count+'" data-trigger="change" data-parsley-minlength="0" data-parsley-maxlength="200">';
+        html += '<input type="text" name="feature_' + feature_count + '"';
+        html += 'placeholder="Feature ' + feature_count + '" data-trigger="change" data-parsley-minlength="0" data-parsley-maxlength="200">';
         html += '</div>';
         html += '<div class="input-wrap">';
-        html += '<input type="text" name="feature_'+feature2+'"';
-        html += 'placeholder="Feature '+feature2+'" data-trigger="change" data-parsley-minlength="0" data-parsley-maxlength="200">';
+        html += '<input type="text" name="feature_' + feature2 + '"';
+        html += 'placeholder="Feature ' + feature2 + '" data-trigger="change" data-parsley-minlength="0" data-parsley-maxlength="200">';
         html += '</div>';
         html += '</div>';
         $('#features_list').append(html);
@@ -224,6 +209,12 @@ $(document).ready(function () {
         $('.dp-img').attr("src", URL.createObjectURL(this.files[0]));
     });
     //////////////////
+    $(".delete_item").on('click', function () {
+        var url = $(this).data("url");
+        swal({title: "Are you sure?", text: "You will not be able to recover this!", type: "warning", showCancelButton: true, confirmButtonColor: "#DD6B55", confirmButtonText: "Yes, delete it!", closeOnConfirm: false}, function ()
+        {
+            window.location.href = url;
+        });
 
-
+    });
 });

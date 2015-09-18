@@ -37,14 +37,4 @@ class Requests_model extends Common_model {
         return false;
     }
 
-    public function get_all_requests($type) {
-        $where = "c.type = ".$type;
-        $join_array = array(
-            array('table' => 'makes m', 'condition' => 'm.id = c.make_id', 'direction' => 'left'),
-            array('table' => 'models model', 'condition' => 'model.id = c.model_id', 'direction' => 'left')
-        );
-        $cars = $this->fetch_join_multiple_limit(NULL, NULL, ' m.title as make_title, model.title as model_title , c.* ', 'requests c', $join_array, $where, FALSE, 'c.created_at DESC');
-        return $cars;
-    }
-
 }
