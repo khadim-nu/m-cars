@@ -6,7 +6,7 @@
             <span class="page-heading"><?= $title; ?></span>
             <?php $this->load->view('message'); ?>
 
-            <a  href="<?= base_url(); ?>admin/add_make">
+            <a  href="<?= base_url(); ?>index.php/admin/add_make">
                 <span class="add-new-link">Add Make</span>
             </a>
 
