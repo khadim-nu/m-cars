@@ -7,7 +7,7 @@
             <?php $this->load->view('message'); ?>
         </div>
         <div id="form-wrap">
-            <form id="admin-register" method="post" action="<?= base_url(); ?>admin/changepassword">
+            <form id="admin-register" method="post" action="<?= base_url(); ?>index.php/admin/changepassword">
                 <fieldset>
                     <div class="row">
                         <div class="input-wrap">

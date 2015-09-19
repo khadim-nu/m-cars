@@ -63,7 +63,7 @@
                             <div class="col-md-6">
                                 <div class="col-xs-5">
                                     <div class="btn-row">
-                                        <a class="btn" href="<?= base_url(); ?>admin/edit_basic_info">Edit</a>
+                                        <a class="btn" href="<?= base_url(); ?>index.php/admin/edit_basic_info">Edit</a>
                                     </div>
                                 </div>
                             </div>

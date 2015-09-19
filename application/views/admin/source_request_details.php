@@ -58,7 +58,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-7">
-                            <span class="add-new-link delete_item" data-url="<?= base_url(); ?>admin/delete_source_request/<?= $request['id']; ?>">Delete</span>
+                            <span class="add-new-link delete_item" data-url="<?= base_url(); ?>index.php/admin/delete_source_request/<?= $request['id']; ?>">Delete</span>
                         </div>
                     </div>
                 </div>

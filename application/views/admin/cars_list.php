@@ -38,7 +38,7 @@
                                             <td class="sorting"><?= $row['price']; ?></td>
                                             <td class="hidden-phone"><?= ($row['created_at']); ?></td>
                                             <td class="hidden-phone"><?= $row['updated_at']; ?></td>
-                                            <td class="hidden-phone"><a href="<?= base_url(); ?>admin/car_datails/<?= $row['id']; ?>">Details</a></td>
+                                            <td class="hidden-phone"><a href="<?= base_url(); ?>index.php/admin/car_datails/<?= $row['id']; ?>">Details</a></td>
                                         </tr>
                                         <?php
                                     }
