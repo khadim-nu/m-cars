@@ -11,7 +11,7 @@ class Welcome extends CI_Controller {
 
     public function index() {
         if (is_admin()) {
-            redirect('admin');
+            redirect('index.php/admin');
         }
         else{
             $this->load->view('cars/index'); 
