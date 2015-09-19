@@ -64,7 +64,7 @@ define('NUM_MAX', 1000000001);
 
 define('UPLOAD_PATH', 'assets/uploads/');
 define('DEFAULT_SRC', 'assets/images/avatar.jpg');
-define('UPLOAD_IMAGE_SIZE', 512); // 1 MB
+define('UPLOAD_IMAGE_SIZE', 6000); // 1 MB
 define('UPLOAD_IMAGE_TYPES', 'jpg|jpeg|png');
 define('IMAGE_MIN_HEIGHT', 162);
 define('IMAGE_MAX_HEIGHT', 1000);
