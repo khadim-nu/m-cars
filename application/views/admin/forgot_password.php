@@ -9,7 +9,7 @@
             <div class="holder">
                 <div class="wrapper">
                     <div class="form-wrap">
-                        <form id="login" method="post" action="<?= base_url() . "index.php/".$user_role; ?>/forgot_password">
+                        <form id="login" method="post" action="<?= base_url() . "".$user_role; ?>/forgot_password">
                             <div class="div-wrap">
                                 <?php $this->load->view('message'); ?>
                             </div>

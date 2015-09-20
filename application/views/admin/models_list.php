@@ -6,7 +6,7 @@
             <span class="page-heading"><?= $title; ?></span>
             <?php $this->load->view('message'); ?>
 
-            <a  href="<?= base_url(); ?>index.php/admin/add_model">
+            <a  href="<?= base_url(); ?>admin/add_model">
                 <span class="add-new-link">Add Model</span>
             </a>
 
@@ -35,7 +35,7 @@
                                             <td class="hidden-phone"><?= ($row['created_at']); ?></td>
                                             <td class="hidden-phone"><?= $row['updated_at']; ?></td>
                                             <td class="hidden-phone">
-                                                <span class="delete-link delete_item" data-url="<?= base_url(); ?>index.php/admin/delete_model/<?= $row['id']; ?>">Delete</span>    
+                                                <span class="delete-link delete_item" data-url="<?= base_url(); ?>admin/delete_model/<?= $row['id']; ?>">Delete</span>    
                                             </td>
 
                                         </tr>

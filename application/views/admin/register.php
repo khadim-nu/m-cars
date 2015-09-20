@@ -9,7 +9,7 @@
         </div>
         <div id="form-wrap">
             <?php $form_data = $this->session->flashdata('form_data'); ?>
-            <form id="admin-register" method="post" action="<?= base_url(); ?>index.php/admin/admin_registration">
+            <form id="admin-register" method="post" action="<?= base_url(); ?>admin/admin_registration">
                 <fieldset>
                     <div class="row">
                         <div class="input-wrap">

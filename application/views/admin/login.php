@@ -8,7 +8,7 @@
         <div class="holder">
             <div class="wrapper">
                 <div class="form-wrap">
-                    <form id = "login" method="post" action="<?= base_url() . "index.php/".$user_role; ?>/login">
+                    <form id = "login" method="post" action="<?= base_url() .$user_role; ?>/login">
                         <fieldset>
                             <div class="input-wrap">
                                 <input type="email" name="email" placeholder="Email ID" data-trigger="change" data-parsley-required data-type="email">

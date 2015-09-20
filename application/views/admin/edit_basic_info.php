@@ -9,7 +9,7 @@
             <?php $this->load->view('message'); ?>
         </div>
         <div id="form-wrap">
-            <form id="admin-register" method="post" action="<?= base_url(); ?>index.php/admin/edit_basic_info" enctype="multipart/form-data">
+            <form id="admin-register" method="post" action="<?= base_url(); ?>admin/edit_basic_info" enctype="multipart/form-data">
                 <fieldset>
                     <div class="row">
                         <div class="input-wrap">

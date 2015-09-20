@@ -22,7 +22,7 @@ class Admin extends MY_Controller {
             $data['source_count'] = $this->Requests_model->record_count(array("status" => 1, 'type' => SOURCE_REQUESTS));
             $this->load->view('admin/dashboard', $data);
         } else {
-            redirect('index.php/admin/login');
+            redirect('admin/login');
         }
     }
 
@@ -30,10 +30,10 @@ class Admin extends MY_Controller {
         if (!is_logged_in()) {
             if ($this->input->server('REQUEST_METHOD') === 'POST') {
                 if ($this->Admin_model->login()) {
-                    redirect('index.php/admin');
+                    redirect('admin');
                 } else {
                     $this->session->set_flashdata('form_data', $_POST);
-                    redirect('index.php/admin/login');
+                    redirect('admin/login');
                 }
             } else {
                 $data['user_role'] = 'admin';
@@ -41,7 +41,7 @@ class Admin extends MY_Controller {
                 $this->load->view('admin/login', $data);
             }
         } else
-            redirect('index.php/welcome');
+            redirect('welcome');
     }
 
     public function forgot_password() {
@@ -49,10 +49,10 @@ class Admin extends MY_Controller {
             if ($this->input->server('REQUEST_METHOD') === 'POST') {
                 if ($this->Admin_model->forgot_password()) {
                     $this->session->set_flashdata('message', "Please check your Email and Login. Thank You.");
-                    redirect('index.php/admin/login');
+                    redirect('admin/login');
                 } else {
                     $this->session->set_flashdata('form_data', $_POST);
-                    redirect('index.php/admin/forgot_password');
+                    redirect('admin/forgot_password');
                 }
             } else {
                 $data['user_role'] = 'admin';
@@ -61,15 +61,15 @@ class Admin extends MY_Controller {
                 $this->load->view('include/footer');
             }
         } else
-            redirect('index.php/welcome');
+            redirect('welcome');
     }
 
     public function verify_forgot_password($token) {
         if ($this->Admin_model->updatePassword_by_token($token))
-            redirect('index.php/admin/login');
+            redirect('admin/login');
         else {
             $this->session->set_flashdata('message', ERROR_MESSAGE . ": forgot password Verification failed. Try again.");
-            redirect('index.php/admin/forgot_password');
+            redirect('admin/forgot_password');
         }
     }
 
@@ -77,23 +77,23 @@ class Admin extends MY_Controller {
         if (is_admin()) {
             if ($this->input->server('REQUEST_METHOD') === 'POST') {
                 if ($this->Admin_model->updatePassword($this->session->userdata('user_data')->name)) {
-                    redirect('index.php/admin');
+                    redirect('admin');
                 } else {
-                    redirect('index.php/admin/changepassword');
+                    redirect('admin/changepassword');
                 }
             } else {
                 $data['title'] = 'Change password';
                 $this->load->view("admin/change_pwd", $data);
             }
         } else {
-            redirect('index.php/welcome');
+            redirect('welcome');
         }
     }
 
     public function logout() {
         $this->session->sess_destroy();
         $this->session->set_flashdata('message', "Logout Successfully");
-        redirect('index.php/welcome');
+        redirect('welcome');
     }
 
     public function admin_registration() {
@@ -101,27 +101,27 @@ class Admin extends MY_Controller {
             if ($this->input->server('REQUEST_METHOD') === 'POST') {
                 if ($this->Admin_model->register()) {
                     $this->session->set_flashdata('message', "Registered Successfully");
-                    redirect('index.php/admin/view_all');
+                    redirect('admin/view_all');
                 } else {
                     $this->session->set_flashdata('form_data', $_POST);
-                    redirect('index.php/admin/admin_registration');
+                    redirect('admin/admin_registration');
                 }
             } else {
                 $data['title'] = 'Admin Registration';
                 $this->load->view('admin/register', $data);
             }
         } else {
-            redirect('index.php/welcome');
+            redirect('welcome');
         }
     }
 
     public function email_authentication($token) {
         if ($this->Admin_model->update_status($token)) {
             $this->session->set_flashdata('message', "Verified Successfully");
-            redirect('index.php/admin/login');
+            redirect('admin/login');
         } else {
             $this->session->set_flashdata('message', ERROR_MESSAGE . ": Not Verifed check your email address.");
-            redirect('index.php/welcome');
+            redirect('welcome');
         }
     }
 
@@ -131,16 +131,16 @@ class Admin extends MY_Controller {
             $data['title'] = 'All Admins';
             $this->load->view('admin/view_admins', $data);
         } else {
-            redirect('index.php/welcome');
+            redirect('welcome');
         }
     }
 
     public function change_status($id, $status) {
         if (is_admin()) {
             $this->Admin_model->change_status($id, $status);
-            redirect('index.php/admin/view_all');
+            redirect('admin/view_all');
         } else {
-            redirect('index.php/welcome');
+            redirect('welcome');
         }
     }
 
@@ -149,7 +149,7 @@ class Admin extends MY_Controller {
             $data['title'] = $this->session->userdata('user_data')->name;
             $this->load->view('admin/basic_info', $data);
         } else {
-            redirect('index.php/welcome');
+            redirect('welcome');
         }
     }
 
@@ -158,9 +158,9 @@ class Admin extends MY_Controller {
             if ($this->input->server('REQUEST_METHOD') === 'POST') {
                 if ($this->Admin_model->save_basic_info()) {
                     $this->session->set_flashdata('message', "Information Saved");
-                    redirect('index.php/admin/basic_info');
+                    redirect('admin/basic_info');
                 } else {
-                    redirect('index.php/admin/edit_basic_info');
+                    redirect('admin/edit_basic_info');
                 }
             } else {
                 $data['user'] = $this->session->userdata('user_data');
@@ -168,7 +168,7 @@ class Admin extends MY_Controller {
                 $this->load->view('admin/edit_basic_info', $data);
             }
         } else {
-            redirect('index.php/welcome');
+            redirect('welcome');
         }
     }
 
@@ -179,7 +179,7 @@ class Admin extends MY_Controller {
             $data['title'] = 'Makes List';
             $this->load->view('admin/makes_list', $data);
         } else {
-            redirect('index.php/welcome');
+            redirect('welcome');
         }
     }
 
@@ -188,16 +188,16 @@ class Admin extends MY_Controller {
             $this->load->model('Makes_model');
             if ($this->input->server('REQUEST_METHOD') === 'POST') {
                 if ($this->Makes_model->add_new()) {
-                    redirect('index.php/admin/makes_list');
+                    redirect('admin/makes_list');
                 } else {
-                    redirect('index.php/admin/add_make');
+                    redirect('admin/add_make');
                 }
             } else {
                 $data['title'] = 'Add New Make';
                 $this->load->view('admin/add_make', $data);
             }
         } else {
-            redirect('index.php/welcome');
+            redirect('welcome');
         }
     }
 
@@ -209,9 +209,9 @@ class Admin extends MY_Controller {
             } else {
                 $this->session->set_flashdata('message', ERROR_MESSAGE . ":Something Went Wrog");
             }
-            redirect('index.php/admin/makes_list');
+            redirect('admin/makes_list');
         } else {
-            redirect('index.php/welcome');
+            redirect('welcome');
         }
     }
 
@@ -222,7 +222,7 @@ class Admin extends MY_Controller {
             $data['title'] = 'Model List';
             $this->load->view('admin/models_list', $data);
         } else {
-            redirect('index.php/welcome');
+            redirect('welcome');
         }
     }
 
@@ -231,16 +231,16 @@ class Admin extends MY_Controller {
             $this->load->model('Models_model');
             if ($this->input->server('REQUEST_METHOD') === 'POST') {
                 if ($this->Models_model->add_new()) {
-                    redirect('index.php/admin/models_list');
+                    redirect('admin/models_list');
                 } else {
-                    redirect('index.php/admin/add_model');
+                    redirect('admin/add_model');
                 }
             } else {
                 $data['title'] = 'Add New Model';
                 $this->load->view('admin/add_model', $data);
             }
         } else {
-            redirect('index.php/welcome');
+            redirect('welcome');
         }
     }
 
@@ -252,9 +252,9 @@ class Admin extends MY_Controller {
             } else {
                 $this->session->set_flashdata('message', ERROR_MESSAGE . ":Something Went Wrog");
             }
-            redirect('index.php/admin/models_list');
+            redirect('admin/models_list');
         } else {
-            redirect('index.php/welcome');
+            redirect('welcome');
         }
     }
 
@@ -265,7 +265,7 @@ class Admin extends MY_Controller {
             $data['title'] = 'Cars List';
             $this->load->view('admin/cars_list', $data);
         } else {
-            redirect('index.php/welcome');
+            redirect('welcome');
         }
     }
 
@@ -293,7 +293,7 @@ class Admin extends MY_Controller {
                 show_404();
             }
         } else {
-            redirect('index.php/welcome');
+            redirect('welcome');
         }
     }
 
@@ -302,9 +302,9 @@ class Admin extends MY_Controller {
             $this->load->model('Cars_model');
             if ($this->input->server('REQUEST_METHOD') === 'POST') {
                 if ($this->Cars_model->add_new()) {
-                    redirect('index.php/admin/cars_list');
+                    redirect('admin/cars_list');
                 } else {
-                    redirect('index.php/index.php/admin/add_new_car');
+                    redirect('admin/add_new_car');
                 }
             } else {
                 $this->load->model('Models_model');
@@ -315,7 +315,7 @@ class Admin extends MY_Controller {
                 $this->load->view('admin/add-car', $data);
             }
         } else {
-            redirect('index.php/index.php/welcome');
+            redirect('welcome');
         }
     }
 
@@ -324,13 +324,13 @@ class Admin extends MY_Controller {
             $this->load->model('Cars_model');
             if ($this->Cars_model->remove_record($id)) {
                 $this->session->set_flashdata('message', "Car deleted successfully");
-                redirect('index.php/index.php/admin/cars_list');
+                redirect('admin/cars_list');
             } else {
                 $this->session->set_flashdata('message', ERROR_MESSAGE . ":Something Went Wrog");
-                redirect('index.php/index.php/admin/car_details/' . $id);
+                redirect('admin/car_details/' . $id);
             }
         } else {
-            redirect('index.php/index.php/welcome');
+            redirect('welcome');
         }
     }
 
@@ -341,7 +341,7 @@ class Admin extends MY_Controller {
             $data['title'] = 'Sell Requests';
             $this->load->view('admin/sell_requests', $data);
         } else {
-            redirect('index.php/index.php/welcome');
+            redirect('welcome');
         }
     }
 
@@ -366,7 +366,7 @@ class Admin extends MY_Controller {
                 show_404();
             }
         } else {
-            redirect('index.php/index.php/welcome');
+            redirect('welcome');
         }
     }
 
@@ -375,13 +375,13 @@ class Admin extends MY_Controller {
             $this->load->model('Requests_model');
             if ($this->Requests_model->remove_record($id)) {
                 $this->session->set_flashdata('message', "Sell Request deleted successfully");
-                redirect('index.php/index.php/admin/sell_requests');
+                redirect('admin/sell_requests');
             } else {
                 $this->session->set_flashdata('message', ERROR_MESSAGE . ":Something Went Wrog");
-                redirect('index.php/index.php/admin/sell_request_details/' . $id);
+                redirect('admin/sell_request_details/' . $id);
             }
         } else {
-            redirect('index.php/index.php/welcome');
+            redirect('welcome');
         }
     }
 
@@ -392,7 +392,7 @@ class Admin extends MY_Controller {
             $data['title'] = 'Source Requests';
             $this->load->view('admin/source_requests', $data);
         } else {
-            redirect('index.php/index.php/welcome');
+            redirect('welcome');
         }
     }
 
@@ -401,13 +401,13 @@ class Admin extends MY_Controller {
             $this->load->model('Requests_model');
             if ($this->Requests_model->remove_record($id)) {
                 $this->session->set_flashdata('message', "Source Request deleted successfully");
-                redirect('index.php/index.php/admin/source_requests');
+                redirect('admin/source_requests');
             } else {
                 $this->session->set_flashdata('message', ERROR_MESSAGE . ":Something Went Wrog");
-                redirect('index.php/admin/source_request_details/' . $id);
+                redirect('admin/source_request_details/' . $id);
             }
         } else {
-            redirect('index.php/welcome');
+            redirect('welcome');
         }
     }
 
@@ -432,7 +432,7 @@ class Admin extends MY_Controller {
                 show_404();
             }
         } else {
-            redirect('index.php/welcome');
+            redirect('welcome');
         }
     }
 

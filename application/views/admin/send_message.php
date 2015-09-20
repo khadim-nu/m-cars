@@ -10,7 +10,7 @@
             ?>
         </div>
         <div id="form-wrap">
-            <form  id="send-message" method="post" action="<?= base_url(); ?>index.php/admin/send_message">
+            <form  id="send-message" method="post" action="<?= base_url(); ?>admin/send_message">
                 <fieldset>
 
                     <div class="row">

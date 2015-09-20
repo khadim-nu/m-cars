@@ -7,7 +7,7 @@
             <?php $this->load->view('message'); ?>
         </div>
         <div id="form-wrap">
-            <form id="admin-create-comeptiton" method="post" action="<?= base_url(); ?>index.php/admin/add_make" enctype="multipart/form-data">
+            <form id="admin-create-comeptiton" method="post" action="<?= base_url(); ?>admin/add_make" enctype="multipart/form-data">
                 <fieldset>
                     <?php $form_data = $this->session->flashdata('form_data');
                     ?>

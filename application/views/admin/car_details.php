@@ -14,7 +14,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-7">
-                            <span class="add-new-link delete_item" data-url="<?= base_url(); ?>index.php/admin/delete_car/<?= $car['id']; ?>">Delete</span>
+                            <span class="add-new-link delete_item" data-url="<?= base_url(); ?>admin/delete_car/<?= $car['id']; ?>">Delete</span>
                         </div>
 <!--                        <div class="col-md-5">
                             <a class="add-new-link"  href="<?= base_url(); ?>admin/delete_car/<?= $car['id']; ?>">Edit</a>

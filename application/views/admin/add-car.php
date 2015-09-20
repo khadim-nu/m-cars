@@ -7,7 +7,7 @@
             <?php $this->load->view('message'); ?>
         </div>
         <div id="form-wrap">
-            <form id="register" method="post" action="<?= base_url(); ?>index.php/admin/add_new_car" enctype="multipart/form-data">
+            <form id="register" method="post" action="<?= base_url(); ?>admin/add_new_car" enctype="multipart/form-data">
                 <fieldset>
                     <?php $form_data = $this->session->flashdata('form_data');
                     ?>

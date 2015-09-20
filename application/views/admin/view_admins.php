@@ -42,7 +42,7 @@
                                             </td>
                                             <?php
                                             if ($this->session->userdata('user_data')->email == ADMIN_EMAIL) {
-                                                echo "<td class='hidden-phone'><a href='" . base_url() . "index.php/admin/change_status/" . $row['id'] . "/" . $row['status'] . "'>".change_status($row['status'])."</a></td>";
+                                                echo "<td class='hidden-phone'><a href='" . base_url() . "admin/change_status/" . $row['id'] . "/" . $row['status'] . "'>".change_status($row['status'])."</a></td>";
                                             }
                                             ?>
                                         </tr>
