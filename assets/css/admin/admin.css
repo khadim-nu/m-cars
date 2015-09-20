@@ -1309,6 +1309,9 @@ table.dataTable.no-footer{border:1px solid #514d95 !important;}
     max-width:  400px;
      
 }
+.item_image img{
+    max-width:  400px;
+}
 .item_detail_title, .item_detail_value,.detail_sub_heading{
    // padding:0  5%;  
    // margin: 0 10px;
