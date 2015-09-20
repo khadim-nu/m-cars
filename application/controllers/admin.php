@@ -309,8 +309,8 @@ class Admin extends MY_Controller {
             } else {
                 $this->load->model('Models_model');
                 $this->load->model('Makes_model');
-                $data['makes'] = $this->Models_model->get_all(FALSE, FALSE, "created_at");
-                $data['models'] = $this->Makes_model->get_all(FALSE, FALSE, "created_at");
+                $data['makes'] = $this->Makes_model->get_all(FALSE, FALSE, "created_at");
+                $data['models'] = $this->Models_model->get_all(FALSE, FALSE, "created_at");
                 $data['title'] = 'Add new car';
                 $this->load->view('admin/add-car', $data);
             }
