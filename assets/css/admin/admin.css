@@ -1306,6 +1306,7 @@ table.dataTable.no-footer{border:1px solid #514d95 !important;}
 .item_image{
     height: auto;
     width:33%;
+    max-width:  400px;
      
 }
 .item_detail_title, .item_detail_value,.detail_sub_heading{
