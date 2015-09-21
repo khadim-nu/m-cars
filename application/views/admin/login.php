@@ -1,4 +1,4 @@
-<?php $this->load->view('include/head'); ?>
+<?php $this->load->view('include/admin/head'); ?>
 
 <div id="login-wrap">
     <div class="main-holder">
@@ -30,4 +30,4 @@
         </div>
     </div>
 </div>
-<?php $this->load->view('include/footer'); ?>
+<?php $this->load->view('include/admin/footer'); ?>
