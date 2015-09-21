@@ -343,17 +343,17 @@ div, input {
     list-style-type: none;
     width: 31.7%;
     margin-right: 2%;
-    padding: 30px 25px;
+   // padding: 30px 25px;
     text-align: center;
-    background-color: gray;
     box-shadow: 0 0 5px #666;
     border-radius: 2px;
-    background-color: #f6f6f6 ;
+    background-color: aliceblue ;
     border: 1px solid #ccc;
     transition: all .2s linear;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    height: 130px;
 }
 #section-menu ul li:nth-child(3n+3) {
     margin-right: 0;
@@ -424,7 +424,7 @@ div, input {
 a.blue-button {
     background-color: #0095b7;
     border: 1px solid #0095b7;
-    margin-top: 50px;
+    margin-top: 20px;
     padding: 15px 50px;
     font-size: 15px;
     display: inline-block;
@@ -440,7 +440,7 @@ a.blue-button {
 }
 a.blue-button:hover {
     border: 1px solid #0095b7;
-    background-color: transparent;
+    background-color: cadetblue;
     -moz-border-radius: 4px;
     border-radius: 4px;
 }
@@ -462,7 +462,7 @@ a.blue-button:hover {
     box-sizing: border-box;
 }
 .home-form-s textarea {
-    min-width: 50%;
+    min-width: 84%;
     width: auto;
     display: block;
     padding: 10px 40px;
@@ -583,8 +583,8 @@ a.blue-button:hover {
     background-color: cadetblue;
 }
 #buy-section , #sell-section, #source-section{
-      padding: 4% 15% !important;
-      height: 540px;
+    padding: 4% 15% !important;
+    height: 600px;
 }
 .heading-main {
     font-size: 28px;
@@ -745,7 +745,7 @@ a.blue-button:hover {
     font-size: 15px;
 }
 .range-slider-area {
-    margin: 25px 0 30px 0;
+    margin: 40px 0 30px 0;
 }
 #buy-section .range-slider-area {
     margin: 35px 0 30px 0;

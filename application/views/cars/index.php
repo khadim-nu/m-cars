@@ -40,7 +40,7 @@
     <div class="wrapper">
         <h2>BUY</h2>
         <p>Browse our selection of used cars available</p>
-        <a href="<?= base_url(); ?>car/buy" class="blue-button">Search for a specific used car</a>
+        <a href="<?= base_url(); ?>car/buy" class="blue-button"></a>
     </div><!--wrapper-->
 </div><!--Buy Section-->
 
@@ -59,7 +59,6 @@
         <p>Allow us to find the right car for you. Whether you know exactly what you want or just have a rough idea, we’ll make sure we find a car that’s just right. </p>
         <h4>HOW IT WORKS</h4>
         <p>
-        <p>
             1. You enter as many (or as few) details about your ideal car
         </p>
         <p>
@@ -73,7 +72,6 @@
         </p>
         <p>
             5. Finalise total payment, then you can enjoy your hand-picked car! 
-        </p>
         </p>
         <a href="<?= base_url(); ?>car/source" class="blue-button">Request Quote</a>
     </div><!--wrapper-->
