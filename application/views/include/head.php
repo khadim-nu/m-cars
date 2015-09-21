@@ -2,34 +2,22 @@
 <html>
     <head>
         <?php $this->load->view('include/variables'); ?>
-        <meta charset="utf-8">
-        <!--<meta name="viewport" content="width=device-width,initial-scale=1">-->
-        <title><?= $title; ?></title>
-        <script type="text/javascript" src="<?= JS_URL; ?>jquery-latest.min.js"></script>
-        <link rel="stylesheet" href="<?= CSS_URL; ?>bootstrap.min.css" media="all" type="text/css">
-        <!--<link rel="stylesheet" href="<?= CSS_URL; ?>all.css" media="all" type="text/css">-->
-        <?php
-        $url = $_SERVER['REQUEST_URI'];
-        $pattern = '/login';
-        if (strlen(strstr($url, $pattern)) > 0 || strlen(strstr($url, "/forgot_password")) > 0) {
-            ?>
-            <link rel="stylesheet" href="<?= CSS_URL ?>login/login.css" media="all" type="text/css">
-        <?php } else if (is_admin() || is_developer()) {
-            ?>
-            <link rel="stylesheet" href="<?= CSS_URL ?>admin/admin.css" media="all" type="text/css">
-            <script type="text/javascript" src="<?= JS_URL; ?>sidebar.js"></script>
-        <?php } else {
-            ?>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-        <?php }
-        ?>
-            
-        <link rel="stylesheet" href="<?= CSS_URL; ?>jquery.dataTables.min.css" media="all" type="text/css">
-        
-        <link rel="stylesheet" href="<?= CSS_URL; ?>jquery-ui.css">
-        
-        <link rel="stylesheet" href="<?= CSS_URL; ?>sweet-alert.css" media="all" type="text/css"> 
-        
-        <script type="text/javascript" src="<?= JS_URL; ?>sweet-alert.min.js"></script>
-    
+        <title><?= $title; ?></title>
+
+        <link rel="stylesheet" href="<?= CSS_URL; ?>style.css" />
+        <link rel="stylesheet" href="<?= CSS_URL; ?>slicknav.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="<?= CSS_URL; ?>jquery.bxslider.css" type="text/css" media="screen" />
+        <link rel='stylesheet' href="<?= CSS_URL; ?>fonts_googleapis.css" type='text/css'>
+        <link rel="stylesheet" href="<?= CSS_URL; ?>jquery.range.css">
+
+        <script type="text/javascript" src="<?= JS_URL; ?>jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="<?= JS_URL; ?>jquery.range.js"></script>
+        <script type="text/javascript" src="<?= JS_URL; ?>modernizr.min.js"></script>
+        <script type="text/javascript" src="<?= JS_URL; ?>jquery.slicknav.js"></script>
+        <script type="text/javascript" src="<?= JS_URL; ?>jquery.bxslider.js"></script>
+        <script type="text/javascript" src="<?= JS_URL; ?>jquery.sticky.js"></script>
+        <script type="text/javascript" src="<?= JS_URL; ?>scripts_custom.js"></script>
+        <script type="text/javascript" src="<?= JS_URL; ?>jquery.easing.1.3.js"></script>
     </head>

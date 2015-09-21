@@ -1,4 +1,4 @@
-<?php $this->load->view('include/head'); ?>
+<?php $this->load->view('include/admin/head'); ?>
 <body class="admin-page">
     <header id="header">
         <div class="top-bar">
