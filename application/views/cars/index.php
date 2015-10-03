@@ -13,24 +13,25 @@
     <div class="wrapper">
         <div id="section-menu">
             <ul>
-                <li>
-                    <a href="#buy-section-link">
-                        <h2>Buy</h2>
-                        <p>Browse our selection of used cars available.</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#sell-section-link">
-                        <h2>Sell</h2>
+                <a href="#buy-section-link">
+                    <li>
+                        <h2>BUY</h2>
+                        <p>Browse our selection</p>
+                        <p>of used cars available.</p>
+                    </li>
+                </a>
+                <a href="#sell-section-link">
+                    <li>
+                        <h2>SELL</h2>
                         <P>Enter the details of your used vehicle in order for us to send you a quote via email.</P>
-                    </a>
-                </li>
-                <li>
-                    <a href="#source-section-link">
-                        <h2>Source</h2>
+                    </li>
+                </a>
+                <a href="#source-section-link">
+                    <li>
+                        <h2>SOURCE</h2>
                         <P>Allow us to find the right car for you. we’ll make sure we find a car that’s just right.</P>
-                    </a>
-                </li>
+                    </li>
+                </a>
             </ul>
         </div><!--Sections Menu-->
     </div><!--wrapper-->

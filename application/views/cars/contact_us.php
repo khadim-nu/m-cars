@@ -5,11 +5,11 @@
         	<div class="heading-main contact-us-heding-bg">Contact Us</div>
         	<p>Thank you for your interest in M-cars. Please leave your contact info and enquiry below and we will endeavour to respond within 48hrs. </p>
             <div id="contact-form">
-            	<form>
-                    <input type="text" class="first-filed" name="" placeholder="Name*"  />
-                    <input type="email" name="" placeholder="Email*"  />
-                    <input type="tel" name="" placeholder="Telephone"  />
-                    <textarea placeholder="Message" rows="10" ></textarea>
+                <form id="register" action="<?= base_url(); ?>welcome/contact_us" method="post">
+                    <input type="text" class="first-filed" name="name" placeholder="Name*" data-trigger="change" data-parsley-required  />
+                    <input type="email" name="email" placeholder="Email*" data-trigger="change" data-parsley-required   />
+                    <input type="tel" name="phone" placeholder="Telephone"/>
+                    <textarea name="message" placeholder="Message" rows="3"></textarea>
                     <p>Disclaimer: Information provided will not be used for marketing purposes and will be used in accordance with the 1998 data protection act. </p>
                     <input type="submit" value="Send"  />
                 </form>

@@ -3,11 +3,10 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-define('APP_STATIC_URL', 'http://www.ozoneplay.com/beta/');
-
 define('APP_NAME', 'M-Cars');
-define('ADMIN_EMAIL', 'khadim.raath@incubasys.com');
-define('ADMIN_EMAIL_PASSWORD', 'no-rep@$$');
+define('ADMIN_EMAIL', 'spdevtesting@gmail.com');
+define('APP_EMAIL', 'info@m-cars.co');
+define('ADMIN_EMAIL_PASSWORD', 'spdev@1$');
 define('ADMIN_NAME', 'M-Cars');
 define('ADMIN',2);
 define('SUPER_ADMIN',1);
@@ -86,7 +85,7 @@ define('REDISAUTH', NULL);
 
 define("OPHOST", "localhost");
 define("OPPORT", 9090);
-define("OPSECRET", "!ncubasys786");
+define("OPSECRET", "!kjfkjsf");
 
 
 /* * ************RABBIT MQ constants*********************** */

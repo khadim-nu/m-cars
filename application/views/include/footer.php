@@ -34,11 +34,8 @@
         <div class="copy-right">© 2015 Created by <span>Speed_Programer</span></div><!--Copy Right-->
         <div id="footer-menu">
             <ul>
-                <li><a href="<?= base_url(); ?>welcome">Home Button</a></li>
-                <li><a href="<?= base_url(); ?>welcome/t_and_c">T&C’s </a></li>
-                <li><a href="<?= base_url(); ?>welcome/contact_us">Contact</a></li>
-                <li><a href="<?= base_url(); ?>welcome/about_us">About</a></li>
-                <li><a href="<?= base_url(); ?>welcome/etc">ETC!</a></li>
+                <li><a href="<?= base_url(); ?>welcome/payment_options">Payment options</a></li>
+                <li><a href="<?= base_url(); ?>welcome/piece_of_mind">Piece of mind</a></li>
             </ul>
         </div><!--Footer Menu-->
         <div class="clear"></div>
