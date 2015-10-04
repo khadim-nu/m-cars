@@ -45,6 +45,6 @@
     </div><!--wrapper-->
 </div><!--Buy Section-->
 <div id="product-container" class="home-product-container">
-    <?php $this->load->view("cars/available_cars_partial"); ?>
+    <?php $this->load->view("cars/available_cars_partial",array("heading"=>"Available Cars")); ?>
 </div><!--Product Container-->
 <?php $this->load->view('include/footer'); ?>
