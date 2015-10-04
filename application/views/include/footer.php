@@ -16,16 +16,9 @@
 <div id="compines-logo-area">
     <div class="wrapper">
         <ul>
-            <li><img src="<?= IMAGE_URL; ?>bugatti-logo.png" alt="bugatti"></li>
-            <li><img src="<?= IMAGE_URL; ?>bmw-logo.png" alt="BMW"></li>
-            <li><img src="<?= IMAGE_URL; ?>bentley-logo.png" alt="bentley"></li>
-            <li><img src="<?= IMAGE_URL; ?>audi-logo.png" alt="audi"></li>
-            <li><img src="<?= IMAGE_URL; ?>hyundai-logo.png" alt="hyundai"></li>
-            <li><img src="<?= IMAGE_URL; ?>hyunda-logo.png" alt="hyunda"></li>
-            <li><img src="<?= IMAGE_URL; ?>dodge-logo.png" alt="dodge"></li>
-            <li><img src="<?= IMAGE_URL; ?>daihatsu-logo.png" alt="daihatsu"></li>
-            <li><img src="<?= IMAGE_URL; ?>mitsubishi-logo.png" alt="mitsubishi"></li>
-            <li><img src="<?= IMAGE_URL; ?>nissan-logo.png" alt="nissan"></li>
+            <li><img src="<?= IMAGE_URL; ?>checkedwithhpi1540.png" alt="checked with hpi1540"></li>
+            <li><img src="<?= IMAGE_URL; ?>Motonovo_finance.jpg" alt="Motonovo finance"></li>
+            <li><img src="<?= IMAGE_URL; ?>WarrantyWiseLogo.jpg" alt="Warranty Wise"></li>
         </ul>
     </div><!--wrapper-->
 </div>
@@ -36,6 +29,7 @@
             <ul>
                 <li><a href="<?= base_url(); ?>welcome/payment_options">Payment options</a></li>
                 <li><a href="<?= base_url(); ?>welcome/piece_of_mind">Piece of mind</a></li>
+                <li><a href="<?= base_url(); ?>welcome/appendix">Appendix</a></li>
             </ul>
         </div><!--Footer Menu-->
         <div class="clear"></div>

@@ -41,7 +41,7 @@
     <div class="wrapper">
         <h2>BUY</h2>
         <p>Browse our selection of used cars available</p>
-        <a href="<?= base_url(); ?>car/buy" class="blue-button"></a>
+        <a href="<?= base_url(); ?>car/buy" class="blue-button">Buy Car</a>
     </div><!--wrapper-->
 </div><!--Buy Section-->
 
@@ -50,7 +50,7 @@
     <div class="wrapper">
         <h2>SELL</h2>
         <p>Enter the details of your used vehicle in order for us to send you a quote via email</p>
-        <a href="<?= base_url(); ?>car/sell" class="blue-button">Request Quote! </a>
+        <a href="<?= base_url(); ?>car/sell" class="blue-button">Request To sell </a>
     </div><!--wrapper-->
 </div><!--sell Section-->
 <div id="source-section-link"></div>
@@ -74,7 +74,7 @@
         <p>
             5. Finalise total payment, then you can enjoy your hand-picked car! 
         </p>
-        <a href="<?= base_url(); ?>car/source" class="blue-button">Request Quote</a>
+        <a href="<?= base_url(); ?>car/source" class="blue-button">Request To Source</a>
     </div><!--wrapper-->
 </div><!--Source Section-->
 <div id="about-Section">
@@ -101,88 +101,7 @@
     </div><!--wrapper-->
 </div><!--About Section-->
 <div id="product-container" class="home-product-container">
-    <div class="wrapper">
-        <div class="heading-main star-bg">New Arrivals</div><!--New Arrivals-->
-        <div id="product-widget-area">
-            <div class="product-widget">
-                <div class="product-image">
-                    <img src="<?= IMAGE_URL; ?>product-one-image.jpg" title="Product Image"  />
-                </div><!-- Product Image-->
-                <div class="product-detail">
-                    <h2>NISSAN ELGRAND 3.5 PETROL AUTOMATIC V6</h2>
-                    <div class="order-buttons">
-                        <a href="#" class="price-buton">£6495</a>
-                        <a href="<?= base_url(); ?>car/car_details/1" class="detail-buton">Details</a>
-                    </div><!--Order Buttons-->
-                </div><!--Product Detail-->
-                <div class="product-meta">
-                    <ul>
-                        <li><img src="<?= IMAGE_URL; ?>celendae-image.jpg" alt=""/> 2004(04)</li>
-                        <li><img src="<?= IMAGE_URL; ?>product-cont-image.jpg" alt="" /> 57000</li>
-                        <li><img src="<?= IMAGE_URL; ?>product-setting-icon.png" alt="" /> BLACK</li>
-                    </ul>
-                </div><!--Product Meta-->
-            </div><!--Product Widget-->
-            <div class="product-widget">
-                <div class="product-image">
-                    <img src="<?= IMAGE_URL; ?>product-one-image.jpg" title="Product Image"  />
-                </div><!-- Product Image-->
-                <div class="product-detail">
-                    <h2>NISSAN ELGRAND 3.5 PETROL AUTOMATIC V6</h2>
-                    <div class="order-buttons">
-                        <a href="#" class="price-buton">£6495</a>
-                        <a href="<?= base_url(); ?>car/car_details/1" class="detail-buton">Details</a>
-                    </div><!--Order Buttons-->
-                </div><!--Product Detail-->
-                <div class="product-meta">
-                    <ul>
-                        <li><img src="<?= IMAGE_URL; ?>celendae-image.jpg" alt=""/> 2004(04)</li>
-                        <li><img src="<?= IMAGE_URL; ?>product-cont-image.jpg" alt="" /> 57000</li>
-                        <li><img src="<?= IMAGE_URL; ?>product-setting-icon.png" alt="" /> BLACK</li>
-                    </ul>
-                </div><!--Product Meta-->
-            </div><!--Product Widget-->
-            <div class="product-widget">
-                <div class="product-image">
-                    <img src="<?= IMAGE_URL; ?>product-one-image.jpg" title="Product Image"  />
-                </div><!-- Product Image-->
-                <div class="product-detail">
-                    <h2>NISSAN ELGRAND 3.5 PETROL AUTOMATIC V6</h2>
-                    <div class="order-buttons">
-                        <a href="#" class="price-buton">£6495</a>
-                        <a href="<?= base_url(); ?>car/car_details/1" class="detail-buton">Details</a>
-                    </div><!--Order Buttons-->
-                </div><!--Product Detail-->
-                <div class="product-meta">
-                    <ul>
-                        <li><img src="<?= IMAGE_URL; ?>celendae-image.jpg" alt=""/> 2004(04)</li>
-                        <li><img src="<?= IMAGE_URL; ?>product-cont-image.jpg" alt="" /> 57000</li>
-                        <li><img src="<?= IMAGE_URL; ?>product-setting-icon.png" alt="" /> BLACK</li>
-                    </ul>
-                </div><!--Product Meta-->
-            </div><!--Product Widget-->
-            <div class="product-widget">
-                <div class="product-image">
-                    <img src="<?= IMAGE_URL; ?>product-one-image.jpg" title="Product Image"  />
-                </div><!-- Product Image-->
-                <div class="product-detail">
-                    <h2>NISSAN ELGRAND 3.5 PETROL AUTOMATIC V6</h2>
-                    <div class="order-buttons">
-                        <a href="#" class="price-buton">£6495</a>
-                        <a href="<?= base_url(); ?>car/car_details/1" class="detail-buton">Details</a>
-                    </div><!--Order Buttons-->
-                </div><!--Product Detail-->
-                <div class="product-meta">
-                    <ul>
-                        <li><img src="<?= IMAGE_URL; ?>celendae-image.jpg" alt=""/> 2004(04)</li>
-                        <li><img src="<?= IMAGE_URL; ?>product-cont-image.jpg" alt="" /> 57000</li>
-                        <li><img src="<?= IMAGE_URL; ?>product-setting-icon.png" alt="" /> BLACK</li>
-                    </ul>
-                </div><!--Product Meta-->
-            </div><!--Product Widget-->
-            <div class="clear"></div>
-        </div><!--Product Widget Area-->
-    </div><!--wrapper-->
+    <?php $this->load->view("cars/available_cars_partial", array("cars" => $cars, "heading" => "New Arrivals")); ?>
 </div><!--Product Container-->
 
 <?php $this->load->view('include/footer'); ?>

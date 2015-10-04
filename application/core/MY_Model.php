@@ -455,7 +455,7 @@ class MY_Model extends CI_Model {
 
 
     public function upload_multiple_images($name = NULL) {
-        $file_names=array();
+        $file_names = array();
         if (isset($_FILES [$name])) {
             foreach ($_FILES[$name]['name'] as $key => $value) {
 
@@ -466,7 +466,7 @@ class MY_Model extends CI_Model {
                     $encripted_name = str_replace('.' . $filenamex, "", $filename) . $this->current_time_stamp . '.' . $filenamex;
 
                     if (move_uploaded_file($_FILES[$name]['tmp_name'][$key], UPLOAD_PATH . $encripted_name)) {
-                        array_push($file_names, UPLOAD_PATH.$encripted_name);
+                        array_push($file_names, UPLOAD_PATH . $encripted_name);
                     }
                 }
             }
@@ -514,16 +514,19 @@ class MY_Model extends CI_Model {
         }
         return FALSE;
     }
-    public function get_all_join($where2=FALSE) {
+
+    public function get_all_join($where2 = FALSE, $limit = NULL, $start = NULL) {
         $where = "c.status = 1";
-        if($where2){
-             $where .=" AND ".$where2;
+        if ($where2) {
+            $where .=" AND " . $where2;
         }
         $join_array = array(
             array('table' => 'makes m', 'condition' => 'm.id = c.make_id', 'direction' => 'left'),
-            array('table' => 'models model', 'condition' => 'model.id = c.model_id', 'direction' => 'left')
+            array('table' => 'models model', 'condition' => 'model.id = c.model_id', 'direction' => 'left'),
+            array('table' => 'attributes atr', 'condition' => 'atr.id = c.attribute_id', 'direction' => 'left')
         );
-        $cars = $this->fetch_join_multiple_limit(NULL, NULL, ' m.title as make_title, model.title as model_title , c.* ', $this->table_name.' c', $join_array, $where, FALSE, 'c.created_at DESC');
+        $select=' atr.style, atr.year,atr.mileage,atr.estate, atr.transmission,atr.speed,atr.fuel,atr.engine_size, atr.no_of_owners,atr.color,atr.doors,atr.other, m.title as make_title, model.title as model_title , c.*';
+        $cars = $this->fetch_join_multiple_limit($limit, $start, $select, $this->table_name . ' c', $join_array, $where, FALSE, 'c.created_at DESC');
         return $cars;
     }
 

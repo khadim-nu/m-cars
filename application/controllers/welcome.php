@@ -14,6 +14,8 @@ class Welcome extends CI_Controller {
             redirect('admin');
         } else {
             $data['title'] = "M-Cars";
+            $this->load->model("Cars_model");
+            $data['cars'] = $this->Cars_model->get_all_join(FALSE,4,0);
             $this->load->view('cars/index', $data);
         }
     }
@@ -23,7 +25,7 @@ class Welcome extends CI_Controller {
             $email_data['to'] = "infotecsysltd@gmail.com";
             $email_data['to_name'] = "infotecsysltd";
             $email_data['subject'] = "New Notifications";
-            $email_data['body'] = $this->load->view("email_templates/contact_us",array("name"=>  $this->input->post("name"),"email"=>$this->input->post("email"),"phone"=>$this->input->post("phone"),"message"=>$this->input->post("message")),TRUE);
+            $email_data['body'] = $this->load->view("email_templates/contact_us", array("name" => $this->input->post("name"), "email" => $this->input->post("email"), "phone" => $this->input->post("phone"), "message" => $this->input->post("message")), TRUE);
             if (send_mail($email_data)) {
                 echo 'Thanks For contacting us';
                 redirect("welcome");
@@ -55,6 +57,7 @@ class Welcome extends CI_Controller {
             $this->load->view('cars/about_us', $data);
         }
     }
+
     public function payment_options() {
         if (is_admin()) {
             redirect('admin');
@@ -63,12 +66,22 @@ class Welcome extends CI_Controller {
             $this->load->view('cars/payment_options', $data);
         }
     }
+
     public function piece_of_mind() {
         if (is_admin()) {
             redirect('admin');
         } else {
             $data['title'] = "Piece Of Mind";
             $this->load->view('cars/piece_of_mind', $data);
+        }
+    }
+
+    public function appendix() {
+        if (is_admin()) {
+            redirect('admin');
+        } else {
+            $data['title'] = "Appendix";
+            $this->load->view('cars/appendix', $data);
         }
     }
 
