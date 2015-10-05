@@ -36,6 +36,10 @@
         </div><!--Sections Menu-->
     </div><!--wrapper-->
 </div><!--Section Menu Container-->
+<div id="product-container" class="home-product-container">
+    <?php $this->load->view("cars/available_cars_partial", array("cars" => $cars, "heading" => "New Arrivals")); ?>
+</div><!--Product Container-->
+
 <div id="buy-section-link"></div>
 <div id="buy-section" class="home-form-s home-buy">
     <div class="wrapper">
@@ -100,8 +104,5 @@
         </div><!--Home video-->
     </div><!--wrapper-->
 </div><!--About Section-->
-<div id="product-container" class="home-product-container">
-    <?php $this->load->view("cars/available_cars_partial", array("cars" => $cars, "heading" => "New Arrivals")); ?>
-</div><!--Product Container-->
 
 <?php $this->load->view('include/footer'); ?>

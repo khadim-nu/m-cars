@@ -3,10 +3,10 @@
 <div id="source-section" class="home-form-s">
     <div class="wrapper">
         <h2>SOURCE</h2>
-        <form action="#" method="post">
+        <form id="register" action="<?= base_url(); ?>car/source" method="post">
             <div class="form-left-fliled">
-                <select>
-                    <option value="" selected="selected">Age</option>
+                <select name="age" data-trigger="change" data-parsley-required>
+                    <option value="" >Age</option>
                     <option value="1" >1</option>
                     <option value="2" >2</option>
                     <option value="3" >3</option>
@@ -18,37 +18,39 @@
                     <option value="8" >9</option>
                     <option value="10" >10</option>
                 </select>
-                <select>
-                    <option value="" selected="selected">Mileage</option>
-                    <option value="" >0</option>
-                    <option value="" >1</option>
-                    <option value="" >150,000</option>
+                <select name="mileage" data-trigger="change" data-parsley-required>
+                    <option value="" >Mileage</option>
+                    <option value="0" >0</option>
+                    <option value="1" >1</option>
+                    <option value="150,000" >150,000</option>
                 </select>
             </div>
 
 
             <div class="form-left-fliled">
-                <select>
-                    <option value="" selected="selected">Colour</option>
-                    <option value="" >Colour 1</option>
-                    <option value="" >Colour 2</option>
-                    <option value="" >Colour 3</option>
+                <select name="color" data-trigger="change" data-parsley-required>
+                    <option value="" >Colour</option>
+                    <option value="black" >Black</option>
+                    <option value="blue" >Blue</option>
+                    <option value="white" >White</option>
+                    <option value="gary" >Gray</option>
+                    <option value="silver" >Silver</option>
                 </select>
-                <select>
-                    <option value="" selected="selected">Fuel type</option>
-                    <option value="" >Bi-fuel</option>
-                    <option value="" >Diesel</option>
-                    <option value="" >Petrol</option>
-                    <option value="" >Electric</option>
-                    <option value="" >Hybrid</option>
-                    <option value="" >LPG</option>
+                <select name="fuel" data-trigger="change" data-parsley-required>
+                    <option value="" >Fuel type</option>
+                    <option value="Bi-fuel" >Bi-fuel</option>
+                    <option value="Diesel" >Diesel</option>
+                    <option value="Petrol" >Petrol</option>
+                    <option value="Electric" >Electric</option>
+                    <option value="Hybrid" >Hybrid</option>
+                    <option value="LPG" >LPG</option>
                 </select>
 
             </div>
             <div class="form-left-fliled">
 
-                <select>
-                    <option value="" selected="selected">Min Seats</option>
+                <select name="min_seats" data-trigger="change" data-parsley-required>
+                    <option value="" >Min Seats</option>
                     <option value="1" >1</option>
                     <option value="2" >2</option>
                     <option value="3" >3</option>
@@ -57,8 +59,8 @@
                     <option value="6" >6</option>
                     <option value="7" >7</option>
                 </select>
-                <select>
-                    <option value="" selected="selected">Dors</option>
+                <select name="doors" data-trigger="change" data-parsley-required>
+                    <option value="" >Doors</option>
                     <option value="1" >1</option>
                     <option value="2" >2</option>
                     <option value="3" >3</option>
@@ -68,8 +70,8 @@
             </div>
             <div class="form-left-fliled">
 
-                <select>
-                    <option value="" selected="selected">Max Seats</option>
+                <select name="max_seats" data-trigger="change" data-parsley-required>
+                    <option value="" >Max Seats</option>
                     <option value="1" >1</option>
                     <option value="2" >2</option>
                     <option value="3" >3</option>
@@ -79,17 +81,17 @@
                     <option value="7" >7</option>
                 </select>
                 <div class="range-slider-area">
-                    <input class="range-slider" type="hidden" value="25,75"/>
+                    <input name="range" class="range-slider" type="hidden" value="25,75" data-trigger="change" data-parsley-required/>
                 </div><!--Range Slider Area-->
             </div>
     </div>
     <div class="clear"></div>
     <label for="faults">Source information!</label>
-    <textarea name="faults" rows="5"></textarea>
-    <input type="submit" value="Request Quote" />
+    <textarea name="faults" rows="3" data-trigger="change" data-parsley-required></textarea>
+    <input type="submit" value="Submit" />
 </form>
 </div><!--wrapper-->
 </div><!--Source Section--><div id="product-container" class="home-product-container">
-  <?php $this->load->view("cars/available_cars_partial",array("heading"=>"Available Cars")); ?>
+    <?php $this->load->view("cars/available_cars_partial", array("heading" => "Available Cars")); ?>
 </div><!--Product Container-->
 <?php $this->load->view('include/footer'); ?>
