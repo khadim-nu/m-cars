@@ -1228,7 +1228,7 @@ div#single-slider {
     line-height: 20px !important;
     margin: 2px 3% 5px 0;
     padding-left: 0;
-    width: 21.6%;
+    width: 29%;
     display: inline-block;
 }
 #VDDetailsPanel .detailbox ul li span {
@@ -1242,14 +1242,14 @@ div#single-slider {
     color: #FF9900 !important;
 }
 #VDDetailsPanel .featuresbox ul li {
-    border-bottom: 1px dotted #eee;
+    border-bottom: 2px dotted #eee;
     color: #1a1a1a;
     float: none;
     font-size: 12px;
     height: 20px !important;
     line-height: 20px !important;
     margin: 2px 3% 5px 0;
-    width: 30%;
+    width: 45%;
     display: inline-block;
 }
 #VDOtherinfo ul li {
