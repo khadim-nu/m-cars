@@ -3,11 +3,11 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-define('APP_STATIC_URL', 'http://www.ozoneplay.com/beta/');
+define('APP_STATIC_URL', 'http://www.test.com/');
 
 define('APP_NAME', 'M-Cars');
-define('ADMIN_EMAIL', 'khadim.raath@incubasys.com');
-define('ADMIN_EMAIL_PASSWORD', 'no-rep@$$');
+define('ADMIN_EMAIL', 'test@gmail.com');
+define('ADMIN_EMAIL_PASSWORD', 'test');
 define('ADMIN_NAME', 'M-Cars');
 define('ADMIN',2);
 define('SUPER_ADMIN',1);
