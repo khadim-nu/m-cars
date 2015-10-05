@@ -13,7 +13,6 @@
         <link rel="stylesheet" href="<?= CSS_URL; ?>jquery.range.css">
         <script type="text/javascript" src="<?= JS_URL; ?>jquery-latest.min.js"></script>
         <link rel="stylesheet" href="<?= CSS_URL; ?>bootstrap.min.css" media="all" type="text/css">
-         <link rel="stylesheet" href="<?= CSS_URL; ?>all.css" media="all" type="text/css">
         <script type="text/javascript" src="<?= JS_URL; ?>jquery.range.js"></script>
         <script type="text/javascript" src="<?= JS_URL; ?>modernizr.min.js"></script>
         <script type="text/javascript" src="<?= JS_URL; ?>jquery.slicknav.js"></script>

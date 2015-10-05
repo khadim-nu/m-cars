@@ -2,32 +2,23 @@
 
 <div id="source-section" class="home-form-s">
     <div class="wrapper">
-        <h2>SOURCE</h2>
+        <h2>SOURCE
+            <span class="display_error"></span>
+        </h2>
         <form id="register" action="<?= base_url(); ?>car/source" method="post">
             <div class="form-left-fliled">
-                <select name="age" data-trigger="change" data-parsley-required>
-                    <option value="" >Age</option>
-                    <option value="1" >1</option>
-                    <option value="2" >2</option>
-                    <option value="3" >3</option>
-                    <option value="4" >4</option>
-                    <option value="5" >5</option>
-                    <option value="6" >6</option>
-                    <option value="7" >7</option>
-                    <option value="8" >8</option>
-                    <option value="8" >9</option>
-                    <option value="10" >10</option>
+                <select class="form-control" name="make" data-trigger="change" data-parsley-required>
+                    <option value="">Select Make</option>
+                    <?php
+                    if (!empty($makes)) {
+                        foreach ($makes as $make) {
+                            ?>
+                            <option value="<?= $make['id']; ?>"><?= $make['title'] ?> </option>
+                            <?php
+                        }
+                    }
+                    ?>
                 </select>
-                <select name="mileage" data-trigger="change" data-parsley-required>
-                    <option value="" >Mileage</option>
-                    <option value="0" >0</option>
-                    <option value="1" >1</option>
-                    <option value="150,000" >150,000</option>
-                </select>
-            </div>
-
-
-            <div class="form-left-fliled">
                 <select name="color" data-trigger="change" data-parsley-required>
                     <option value="" >Colour</option>
                     <option value="black" >Black</option>
@@ -36,6 +27,23 @@
                     <option value="gary" >Gray</option>
                     <option value="silver" >Silver</option>
                 </select>
+            </div>
+
+
+            <div class="form-left-fliled">
+                <select class="form-control" name="model" data-trigger="change" data-parsley-required>
+                    <option value="">Select Model</option>
+                    <?php
+                    if (!empty($models)) {
+                        foreach ($models as $model) {
+                            ?>
+                            <option value="<?= $model['id']; ?>"><?= $model['title'] ?> </option>
+                            <?php
+                        }
+                    }
+                    ?>
+                </select>
+
                 <select name="fuel" data-trigger="change" data-parsley-required>
                     <option value="" >Fuel type</option>
                     <option value="Bi-fuel" >Bi-fuel</option>
@@ -86,8 +94,16 @@
             </div>
     </div>
     <div class="clear"></div>
-    <label for="faults">Source information!</label>
-    <textarea name="faults" rows="3" data-trigger="change" data-parsley-required></textarea>
+    <label for="comment">Source information!</label>
+    <textarea name="comment" rows="3" data-trigger="change" data-parsley-required placeholder="Write more info."></textarea>
+    <label for="name">Contact Details</label>
+    <div class="clear"></div>
+    <div class="form-left-fliled">
+        <input type="text" name="name" placeholder="Name" data-trigger="change" data-parsley-required />
+    </div>
+    <div class="form-left-fliled">
+        <input type="email" name="email" placeholder="Email" data-trigger="change" data-parsley-required />
+    </div>
     <input type="submit" value="Submit" />
 </form>
 </div><!--wrapper-->

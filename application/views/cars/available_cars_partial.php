@@ -14,7 +14,7 @@
                     <div class="product-detail">
                         <h2><?= $car['make_title'] ?> <?= $car['transmission']; ?> <?= $car['fuel']; ?> <?= $car['style']; ?></h2>
                         <div class="order-buttons">
-                            <a href="#" class="price-buton">£<?= $car['price']; ?></a>
+                            <a href="<?= base_url(); ?>car/car_Details/<?= $car['id']; ?>" class="price-buton">£<?= $car['price']; ?></a>
                             <a href="<?= base_url(); ?>car/car_Details/<?= $car['id']; ?>" class="detail-buton">Details</a>
                         </div><!--Order Buttons-->
                     </div><!--Product Detail-->

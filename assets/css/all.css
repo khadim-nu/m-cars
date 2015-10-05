@@ -1,5 +1,0 @@
-.parsley-errors-list.filled, .input-wrap .parsley-errors-list, #form-wrap .row .input-wrap .parsley-errors-list, #form-wrap .row .input-wrap .parsley-errors-list.filled, #form-wrap .row .parsley-errors-list, #form-wrap .row .parsley-errors-list.filled {
-  list-style: none;
-  font-size: 12px;
-  color: red;
-}

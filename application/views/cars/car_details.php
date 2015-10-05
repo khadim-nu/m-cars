@@ -40,16 +40,30 @@
                 <h5>General - Info</h5>
                 <div class="detailbox">
                     <ul class="">
-                        <li><strong>£<?= $car['price']; ?></strong><span>New Price:</span></li>
-                        <li class="change-clor-list"><strong>£<?= $car['price']; ?></strong><span>Our Price:</span></li>
-                        <li><strong>---</strong><span>Body Type:</span></li>
+                        <li><strong>£<?= $car['price1']; ?></strong><span>New Price:</span></li>
+                        <li class="change-clor-list"><strong>£<?= $car['price2']; ?></strong><span>Our Price:</span></li>
+                        <li><strong><?= $car['vehicle_type']; ?></strong><span>Vehicle Type:</span></li>
+                        <li><strong><?= $car['body_type']; ?></strong><span>Body Type:</span></li>
                         <li><strong><?= $car['transmission']; ?></strong><span>Trans:</span></li>
                         <li><strong><?= $car['mileage']; ?></strong><span>Mileage:</span></li>
                         <li><strong><?= $car['fuel']; ?></strong><span>Fuel Type:</span></li>
-                        <li><strong><?= $car['year']; ?></strong><span>Reg Year:</span></li>
+                        <li><strong><?= $car['year']; ?></strong><span>Year:</span></li>
+                        <li><strong><?= $car['registration']; ?></strong><span>Registration:</span></li>
                         <li><strong><?= $car['doors']; ?></strong><span>Doors:</span></li>
                         <li><strong><?= $car['engine_size']; ?></strong><span>Engine Size:</span></li>
-                        <li class="vdcolour"><strong><?= $car['color']; ?></strong><span>Colour:</span></li>
+                        <li><strong><?= $car['interior']; ?></strong><span>Interior:</span></li>
+                        <li><strong><?= $car['exterior']; ?></strong><span>Exterior:</span></li>
+                        <li><strong><?= $car['condition']; ?></strong><span>Condition:</span></li>
+                        <li><strong><?= $car['service']; ?></strong><span>Service:</span></li>
+                        <li class="vdcolour"><strong><?= $car['color']; ?></strong><span>Color:</span></li>
+                                                <li><strong><?= $car['style']; ?></strong><span>Style:</span></li>
+                        <li><strong><?= $car['speed']; ?></strong><span>Speed:</span></li>
+                        <li><strong><?= $car['estate']; ?></strong><span>Estate:</span></li>
+
+                        <li><strong><?= $car['no_of_owners']; ?></strong><span>Owners:</span></li>
+
+                        <li><strong><?= $car['other']; ?></strong><span>Other:</span></li>
+
                         <div class="clear"></div>
                     </ul>
                 </div>
@@ -78,6 +92,14 @@
                 <div class="prodect-detail-table">
                     <table>
                         <tr>
+                            <td>Make</td>
+                            <td><?= $car['make_title']; ?></td>
+                        </tr>
+                        <tr>
+                            <td>Model</td>
+                            <td><?= $car['model_title']; ?></td>
+                        </tr>
+                        <tr>
                             <td>Miles</td>
                             <td><?= $car['mileage']; ?></td>
                         </tr>
@@ -86,24 +108,8 @@
                             <td>£<?= $car['price']; ?></td>
                         </tr>
                         <tr>
-                            <td>Vehicle Type</td>
-                            <td>Wagons</td>
-                        </tr>
-                        <tr>
                             <td>Transmission</td>
                             <td><?= $car['transmission']; ?></td>
-                        </tr>
-                        <tr>
-                            <td>Exterior:</td>
-                            <td>ORANGE METALIC </td>
-                        </tr>
-                        <tr>
-                            <td>Interior</td>
-                            <td>BLACK LEATHER</td>
-                        </tr>
-                        <tr>
-                            <td>Engine Size</td>
-                            <td><?= $car['engine_size']; ?></td>
                         </tr>
                         <tr>
                             <td>Fuel Type</td>
@@ -115,9 +121,10 @@
                 <h5>Contact To Buy :</h5>
                 <form id="register" action="<?= base_url(); ?>car/contact_to_buy" method="post">
                     <input type="hidden" name="car_id" value="<?= $car['id']; ?>" />
-                    <input type="text" name="name" placeholder="Name" />
-                    <input type="email" name="email" placeholder="Email" />
-                    <textarea name="message" rows="3" placeholder="Message"></textarea>
+                    <input type="text" name="name" placeholder="Name" data-trigger="change" data-parsley-required />
+                    <input type="email" name="email" placeholder="Email" data-trigger="change" data-parsley-required />
+                    <input type="tel" name="phone" placeholder="Telephone (optional)"/>
+                    <textarea name="message" rows="3" placeholder="Message" data-trigger="change" data-parsley-required></textarea>
                     <input type="submit" value="Send"  />
                 </form>
             </div>

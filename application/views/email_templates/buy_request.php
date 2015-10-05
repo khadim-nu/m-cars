@@ -18,7 +18,7 @@
                 <p style="margin:0 0 10px;">Hi <?= ADMIN_NAME . ',' ?></p>
             </div>
             <div class="txt" style="overflow:hidden; padding:0 0 10px; line-height:30px;">
-                <p style="margin:0 0 10px;">A client has contacted you.</p>
+                <p style="margin:0 0 10px;">Mr./Ms <strong><?= $name; ?></strong> has requested to buy the car  <a href="<?= base_url()."car/car_details/".$car_id; ?>">View Car</a></p>
             </div>
             <div class="txt" style="overflow:hidden; padding:0 0 10px; line-height:30px;">
                 <p style="margin:0 0 10px;"> <strong>Client Details:</strong></p>
@@ -33,7 +33,7 @@
                 <p style="margin:0 0 10px;">Phone: <?= $phone; ?></p>
             </div>
             <div class="txt" style="overflow:hidden; padding:0 0 10px; line-height:30px;">
-                <p style="margin:0 0 10px;">"<?= $message; ?>"</p>
+                <p style="margin:0 0 10px;">"<?= $comment; ?>"</p>
             </div>
 
             <div class="txt-box" style="overflow:hidden; margin:0 0 25px;">

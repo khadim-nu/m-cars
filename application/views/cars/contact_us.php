@@ -6,10 +6,10 @@
         	<p>Thank you for your interest in M-cars. Please leave your contact info and enquiry below and we will endeavour to respond within 48hrs. </p>
             <div id="contact-form">
                 <form id="register" action="<?= base_url(); ?>welcome/contact_us" method="post">
-                    <input type="text" class="first-filed" name="name" placeholder="Name*" data-trigger="change" data-parsley-required  />
-                    <input type="email" name="email" placeholder="Email*" data-trigger="change" data-parsley-required   />
-                    <input type="tel" name="phone" placeholder="Telephone"/>
-                    <textarea name="message" placeholder="Message" rows="3"></textarea>
+                    <input type="text" class="first-filed" name="name" placeholder="Name" data-trigger="change" data-parsley-required  />
+                    <input type="email" name="email" placeholder="Email" data-trigger="change" data-parsley-required   />
+                    <input type="tel" name="phone" placeholder="Telephone (optional)"/>
+                    <textarea name="message" placeholder="Message" rows="3" data-trigger="change" data-parsley-required></textarea>
                     <p>Disclaimer: Information provided will not be used for marketing purposes and will be used in accordance with the 1998 data protection act. </p>
                     <input type="submit" value="Send"  />
                 </form>

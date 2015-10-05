@@ -45,7 +45,7 @@
     <div class="wrapper">
         <h2>BUY</h2>
         <p>Browse our selection of used cars available</p>
-        <a href="<?= base_url(); ?>car/buy" class="blue-button">Buy Car</a>
+        <a href="<?= base_url(); ?>car/buy" class="blue-button">Show Cars</a>
     </div><!--wrapper-->
 </div><!--Buy Section-->
 

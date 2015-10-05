@@ -1,9 +1,9 @@
 <?php
 
 function send_mail($email_data) {
-   // require_once('libs/PHPMailer/class.phpmailer.php');
-     $CI = & get_instance();
-     $CI->load->library('My_phpmailer');
+    // require_once('libs/PHPMailer/class.phpmailer.php');
+    $CI = & get_instance();
+    $CI->load->library('My_phpmailer');
     $mail = new PHPMailer(); // defaults to using php "mail()"
     $mail->IsSMTP(); // enable SMTP
     // $mail->SMTPDebug = 2; // debugging: 1 = errors and messages, 2 = messages only
@@ -21,8 +21,11 @@ function send_mail($email_data) {
     if (isset($email_data['from'])) {
         $mail->AddReplyTo($email_data['from'], $email_data['from_name']);
     }
-    $mail->AddAddress($email_data['to'], $email_data['to_name']);
-
+    if (isset($email_data['to'])) {
+        $mail->AddAddress($email_data['to'], $email_data['to_name']);
+    } else {
+        $mail->AddAddress(TO_EMAIL, TO_NAME);
+    }
     $mail->Subject = $email_data['subject'];
 
     $mail->AltBody = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test

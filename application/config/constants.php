@@ -8,6 +8,10 @@ define('ADMIN_EMAIL', 'spdevtesting@gmail.com');
 define('APP_EMAIL', 'info@m-cars.co');
 define('ADMIN_EMAIL_PASSWORD', 'spdev@1$');
 define('ADMIN_NAME', 'M-Cars');
+
+define('TO_EMAIL', 'infotecsysltd@gmail.com');
+define('TO_NAME', 'Speed');
+
 define('ADMIN',2);
 define('SUPER_ADMIN',1);
 /*

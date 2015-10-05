@@ -525,7 +525,8 @@ class MY_Model extends CI_Model {
             array('table' => 'models model', 'condition' => 'model.id = c.model_id', 'direction' => 'left'),
             array('table' => 'attributes atr', 'condition' => 'atr.id = c.attribute_id', 'direction' => 'left')
         );
-        $select=' atr.style, atr.year,atr.mileage,atr.estate, atr.transmission,atr.speed,atr.fuel,atr.engine_size, atr.no_of_owners,atr.color,atr.doors,atr.other, m.title as make_title, model.title as model_title , c.*';
+        $atr="atr.condition,atr.service,atr.registration, atr.interior,atr.exterior,atr.price1,atr.price2,atr.vehicle_type,atr.body_type , ";
+        $select=$atr.' atr.style, atr.year,atr.mileage,atr.estate, atr.transmission,atr.speed,atr.fuel,atr.engine_size, atr.no_of_owners,atr.color,atr.doors,atr.other, m.title as make_title, model.title as model_title , c.*';
         $cars = $this->fetch_join_multiple_limit($limit, $start, $select, $this->table_name . ' c', $join_array, $where, FALSE, 'c.created_at DESC');
         return $cars;
     }
