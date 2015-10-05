@@ -329,7 +329,7 @@ div, input {
 }
 #section-menu-container {
     padding: 7px 0 7px 0;
-    background-color: palegoldenrod;
+    background-color: #614381;
 }
 #section-menu-container p {
     font-size: 16px;
@@ -1220,7 +1220,7 @@ div#single-slider {
 }
 
 #VDDetailsPanel .detailbox ul li {
-    border-bottom: 1px dotted #eee;
+    border-bottom: 2px dotted #ECD;
     color: #1a1a1a;
     float: none;
     font-size: 12px;
