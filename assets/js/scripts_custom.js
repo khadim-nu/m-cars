@@ -7,6 +7,8 @@ jQuery(document).ready(function($) {
 	$('.homeslider').bxSlider({
 		  pager: false,
 		  auto: true,
+                  mode:  'fade',
+                  
 	});
 	
 });

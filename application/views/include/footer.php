@@ -22,6 +22,43 @@
         </ul>
     </div><!--wrapper-->
 </div>
+
+<div id="footer-container">
+    <div class="wrapper">
+        <div id="footer-widgets">
+            <div class="widget">
+                <h4>About US</h4>
+                <span class="address">Horn Jewelers <br /> M-cars 24 Salisbury Road </span>
+                <span class="phone">Telephone: 01273 724738</span>
+            </div><!--widget-->
+            <div class="widget">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="<?= base_url(); ?>welcome/contact_us">Contact</a></li>
+                    <li><a href="<?= base_url(); ?>welcome/about_us">About</a></li>
+                    <li><a href="<?= base_url(); ?>welcome/etc">ETC!</a></li>
+                </ul>
+            </div><!--widget-->
+            <div class="widget last">
+                <h4>Social</h4>
+                <div class="footer-timing">
+                    <div class="header-socials">
+                        <ul id="social_links">
+                            <li><a href="#"><img src="<?= IMAGE_URL; ?>facebook-icon.png" alt="facebook"></a></li>
+                            <li><a href="#"><img src="<?= IMAGE_URL; ?>twitter-icon.png" alt="twiiter"></a></li>
+                        </ul>
+                    </div><!--Header Socials-->
+                </div><!--footer timing-->
+            </div><!--widget-->
+
+            <div class="clear"></div>
+        </div><!--footer widgets-->
+
+    </div><!--wrapper-->
+</div><!--footer container-->
+
+
+
 <div id="footer">
     <div class="wrapper">
         <div class="copy-right">© 2015 Created by <span>Speed_Programer</span></div><!--Copy Right-->
