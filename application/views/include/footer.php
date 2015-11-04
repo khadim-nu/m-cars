@@ -27,26 +27,12 @@
     <div class="wrapper">
         <div id="footer-widgets">
             <div class="widget">
-                <h4>About US</h4>
+                <h4>Contact US</h4>
                 <span class="address">Horn Jewelers <br /> M-cars 24 Salisbury Road </span>
                 <span class="phone">Telephone: 01273 724738</span>
             </div><!--widget-->
             <div class="widget">
                 <h4>Quick Links</h4>
-                <!--                <ul>
-                                    <li>
-                                        <a href="<?= base_url(); ?>welcome/contact_us">Contact</a>
-                                        <a class="quick-link" href="<?= base_url(); ?>welcome/payment_options">Payment Options</a>
-                                    </li>
-                                    <li>
-                                        <a href="<?= base_url(); ?>welcome/about_us">About</a>
-                                        <a class="quick-link" href="<?= base_url(); ?>welcome/piece_of_mind">Piece Of Mind</a>
-                                    </li>
-                                    <li>
-                                        <a href="<?= base_url(); ?>welcome/etc">ETC!</a>
-                                        <a class="quick-link" href="<?= base_url(); ?>welcome/appendix">Appendix</a>
-                                    </li>
-                                </ul>-->
                 <div class="quicklinks-group">
                     <ul class="quicklinks-list">
                         <li><a href="<?= base_url(); ?>welcome/contact_us">Contact</a></li>
