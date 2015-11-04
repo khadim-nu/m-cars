@@ -301,6 +301,7 @@ div, input {
     height: 440px !important;
     border-top:1px solid #b6b6b6;
     border-radius: 30px;
+    background-color: #eee;
     
 }
 #main-menu li:hover ul ul {
@@ -370,7 +371,7 @@ div, input {
 }
 #section-menu ul li:hover{
     background-color: #000 ;
-   height: 150px;
+   height: 120px;
 }
 
 #section-menu ul li:nth-child(3n+3) {

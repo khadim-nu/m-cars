@@ -17,8 +17,7 @@
                     <li>
                         <h2>BUY</h2>
                         <div class="btn-desc">
-                            <p>Browse our selection</p>
-                            <p>of used cars available.</p>
+                            <p>Browse our selection of used cars available.</p>
                         </div>
                     </li>
                 </a>
@@ -26,7 +25,7 @@
                     <li>
                         <h2>SELL</h2>
                         <div class="btn-desc">
-                            <P>Enter the details of your used vehicle in order for us to send you a quote via email.</P>
+                            <P>Need to sell your current car?</P>
                         </div>
                     </li>
                 </a>
@@ -34,7 +33,7 @@
                     <li>
                         <h2>SOURCE</h2>
                         <div class="btn-desc">
-                            <P>Allow us to find the right car for you. we’ll make sure we find a car that’s just right.</P>
+                            <P>A tailored service to find a car to suit you.</P>
                         </div>
                     </li>
                 </a>
