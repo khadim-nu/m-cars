@@ -487,10 +487,10 @@ a.blue-button:hover {
     box-sizing: border-box;
 }
 .home-form-s textarea {
-    min-width: 84%;
+    min-width: 75%;
     width: auto;
     display: block;
-    padding: 10px 40px;
+    padding: 10px 10px;
     font-size: 15px;
     margin-bottom: 20px;
     line-height: 1;
