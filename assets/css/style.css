@@ -28,7 +28,7 @@ time, mark, audio, video {
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
+    font-size: 20px;
     vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -158,7 +158,7 @@ div, input {
 }
 #header {
     padding: 10px 0;
-    background-color: #eee;
+    background-color: #aaa;
     left: 0;
     right: 0;
     z-index: 999999;
@@ -928,6 +928,7 @@ a.blue-button:hover {
 }
 #page-wrap {
     padding: 35px 0;
+    background-color: #eee;
 }
 #content {
     float: left;
@@ -1409,7 +1410,6 @@ h6 a:hover {
 }
 
 p {
-    font-size: 14px;
     line-height: 1.4;
     color: #000;
     margin-bottom: 15px;
