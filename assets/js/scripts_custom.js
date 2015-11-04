@@ -4,7 +4,7 @@ jQuery(document).ready(function($) {
 	});
 });
 jQuery(document).ready(function($) {
-	$('.homeslider').bxSlider({
+	$('.homeslider, .bxslider').bxSlider({
 		  pager: false,
 		  auto: true,
                   mode:  'fade',

@@ -16,20 +16,26 @@
                 <a href="<?= base_url(); ?>car/buy">
                     <li>
                         <h2>BUY</h2>
-                        <p>Browse our selection</p>
-                        <p>of used cars available.</p>
+                        <div class="btn-desc">
+                            <p>Browse our selection</p>
+                            <p>of used cars available.</p>
+                        </div>
                     </li>
                 </a>
                 <a href="<?= base_url(); ?>car/sell">
                     <li>
                         <h2>SELL</h2>
-                        <P>Enter the details of your used vehicle in order for us to send you a quote via email.</P>
+                        <div class="btn-desc">
+                            <P>Enter the details of your used vehicle in order for us to send you a quote via email.</P>
+                        </div>
                     </li>
                 </a>
                 <a href="<?= base_url(); ?>car/source">
                     <li>
                         <h2>SOURCE</h2>
-                        <P>Allow us to find the right car for you. we’ll make sure we find a car that’s just right.</P>
+                        <div class="btn-desc">
+                            <P>Allow us to find the right car for you. we’ll make sure we find a car that’s just right.</P>
+                        </div>
                     </li>
                 </a>
             </ul>
@@ -49,14 +55,6 @@
     </div><!--wrapper-->
 </div><!--Buy Section-->
 
-<div id="sell-section-link"></div>
-<div id="sell-section" class="home-form-s home-sell">
-    <div class="wrapper">
-        <h2>SELL</h2>
-        <p>Enter the details of your used vehicle in order for us to send you a quote via email</p>
-        <a href="<?= base_url(); ?>car/sell" class="blue-button">Request To sell </a>
-    </div><!--wrapper-->
-</div><!--sell Section-->
 <div id="source-section-link"></div>
 <div id="source-section" class="home-form-s home-source">
     <div class="wrapper">
@@ -81,6 +79,15 @@
         <a href="<?= base_url(); ?>car/source" class="blue-button">Request To Source</a>
     </div><!--wrapper-->
 </div><!--Source Section-->
+
+<div id="sell-section-link"></div>
+<div id="sell-section" class="home-form-s home-sell">
+    <div class="wrapper">
+        <h2>SELL</h2>
+        <p>Enter the details of your used vehicle in order for us to send you a quote via email</p>
+        <a href="<?= base_url(); ?>car/sell" class="blue-button">Request To sell </a>
+    </div><!--wrapper-->
+</div><!--sell Section-->
 <div id="about-Section">
     <div class="wrapper">
         <div class="section-title">

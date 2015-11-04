@@ -33,19 +33,41 @@
             </div><!--widget-->
             <div class="widget">
                 <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="<?= base_url(); ?>welcome/contact_us">Contact</a></li>
-                    <li><a href="<?= base_url(); ?>welcome/about_us">About</a></li>
-                    <li><a href="<?= base_url(); ?>welcome/etc">ETC!</a></li>
-                </ul>
+                <!--                <ul>
+                                    <li>
+                                        <a href="<?= base_url(); ?>welcome/contact_us">Contact</a>
+                                        <a class="quick-link" href="<?= base_url(); ?>welcome/payment_options">Payment Options</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?= base_url(); ?>welcome/about_us">About</a>
+                                        <a class="quick-link" href="<?= base_url(); ?>welcome/piece_of_mind">Piece Of Mind</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?= base_url(); ?>welcome/etc">ETC!</a>
+                                        <a class="quick-link" href="<?= base_url(); ?>welcome/appendix">Appendix</a>
+                                    </li>
+                                </ul>-->
+                <div class="quicklinks-group">
+                    <ul class="quicklinks-list">
+                        <li><a href="<?= base_url(); ?>welcome/contact_us">Contact</a></li>
+                        <li><a href="<?= base_url(); ?>welcome/about_us">About</a></li>
+                        <li><a href="<?= base_url(); ?>welcome/etc">ETC!</a></li>
+                    </ul>
+                    <ul class="quicklinks-list">
+                        <li><a href="<?= base_url(); ?>welcome/payment_options">Payment Options</a></li>
+                        <li><a href="<?= base_url(); ?>welcome/piece_of_mind">Piece Of Mind</a></li>
+                        <li><a href="<?= base_url(); ?>welcome/appendix">Appendix</a></li>
+                    </ul>
+                </div>
             </div><!--widget-->
             <div class="widget last">
                 <h4>Social</h4>
                 <div class="footer-timing">
                     <div class="header-socials">
                         <ul id="social_links">
-                            <li><a href="#"><img src="<?= IMAGE_URL; ?>facebook-icon.png" alt="facebook"></a></li>
-                            <li><a href="#"><img src="<?= IMAGE_URL; ?>twitter-icon.png" alt="twiiter"></a></li>
+                            <li><a href="#"><img src="<?= IMAGE_URL; ?>fb.png" alt="facebook"></a></li>
+                            <li><a href="#"><img src="<?= IMAGE_URL; ?>twitter.png" alt="twiiter"></a></li>
+                            <li><a href="#"><img src="<?= IMAGE_URL; ?>google.png" alt="google"></a></li>
                         </ul>
                     </div><!--Header Socials-->
                 </div><!--footer timing-->
@@ -64,9 +86,7 @@
         <div class="copy-right">© 2015 Created by <span>Speed_Programer</span></div><!--Copy Right-->
         <div id="footer-menu">
             <ul>
-                <li><a href="<?= base_url(); ?>welcome/payment_options">Payment options</a></li>
-                <li><a href="<?= base_url(); ?>welcome/piece_of_mind">Piece of mind</a></li>
-                <li><a href="<?= base_url(); ?>welcome/appendix">Appendix</a></li>
+                <li>All rights reserved.</li>
             </ul>
         </div><!--Footer Menu-->
         <div class="clear"></div>

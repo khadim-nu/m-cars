@@ -1,5 +1,5 @@
 <?php $this->load->view('include/header'); ?>
-<div id="sell-section" class="home-form-s">
+<div id="sell-section-single" class="home-form-s">
     <div class="wrapper">
         <h2>SELL
             <span class="display_error"></span>
