@@ -51,9 +51,9 @@
                 <div class="footer-timing">
                     <div class="header-socials">
                         <ul id="social_links">
-                            <li><a href="#"><img src="<?= IMAGE_URL; ?>fb.png" alt="facebook"></a></li>
-                            <li><a href="#"><img src="<?= IMAGE_URL; ?>twitter.png" alt="twiiter"></a></li>
-                            <li><a href="#"><img src="<?= IMAGE_URL; ?>google.png" alt="google"></a></li>
+                            <li><a href="http://www.facebook.com/m.cars"><img src="<?= IMAGE_URL; ?>fb.png" alt="facebook"></a></li>
+                            <li><a href="http://www.twitter.com/m.cars"><img src="<?= IMAGE_URL; ?>twitter.png" alt="twiiter"></a></li>
+                            <li><a href="http://www.google.com/m.cars"><img src="<?= IMAGE_URL; ?>google.png" alt="google"></a></li>
                         </ul>
                     </div><!--Header Socials-->
                 </div><!--footer timing-->

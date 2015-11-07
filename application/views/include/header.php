@@ -3,7 +3,7 @@
     <div id="header">
         <div class="wrapper">
             <div id="logo">
-                <a href="<?= base_url(); ?>welcome"><img src="<?= IMAGE_URL; ?>logo.png" alt="Logo" style="height: 110px"  /></a>
+                <a href="<?= base_url(); ?>welcome"><img id="header-logo" src="<?= IMAGE_URL; ?>logo.png" alt="Logo"  /></a>
             </div><!--Logo-->
             <div id="main-menu">
                 <ul>
@@ -15,8 +15,8 @@
             </div><!--Main Menu-->
             <div id="header-right" >
                 <div id="header-right-bottom">
-                    M:<a href="tel:1234567891">07771356796</a><br>
-                    T :<a href="tel:1234567891">01273724738</a>
+                    M:<a href="tel:07771356796">07771356796</a><br>
+                    T :<a href="tel:01273724738">01273724738</a>
                    
                 </div><!--Header Right Bottom-->
             </div><!--Header Right-->
