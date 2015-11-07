@@ -181,6 +181,7 @@ div, input {
 }
 #header-right {
     float: right;
+    margin-top: 17px;
 }
 .header-socials ul {
     padding: 0;
